@@ -444,3 +444,33 @@ ul.mini b{font:700 1.4rem var(--f-display);text-transform:uppercase;color:var(--
   .facts-list{grid-template-columns:minmax(0,1fr)}
   .draftbar .wrap{flex-direction:column;align-items:flex-start;gap:8px}
 }
+
+/* touch targets: 44px minimum for controls outside running text */
+.draftbar button,.draftbar .fb-link{min-height:44px;display:inline-flex;align-items:center}
+.crumbs a{display:inline-flex;align-items:center;min-height:44px}
+.book-contact a{min-height:44px}
+.more,.card .more,.inst .more,.more-link{display:inline-flex;align-items:center;min-height:44px}
+.btn-sm{min-height:44px}
+
+/* proof strip on phones: one tidy row per credential */
+@media (max-width:600px){
+  .proof ul{grid-template-columns:minmax(0,1fr);row-gap:0;padding:0}
+  .proof li,.proof li:first-child,.proof li:nth-child(3){display:grid;grid-template-columns:minmax(0,10.5rem) minmax(0,1fr);gap:16px;align-items:baseline;border-left:0;border-bottom:1px solid var(--gf-line);padding:16px 0}
+  .proof li:last-child{border-bottom:0}
+  .proof b{font-size:22px;line-height:1.05}
+  .proof span{margin-top:0;line-height:1.4}
+}
+/* phones: keep opening hours on one line each, roomier footer links */
+@media (max-width:600px){
+  table.hours th{width:38%;padding-right:12px}
+  table.hours td{white-space:nowrap}
+  .foot li a{display:inline-block;padding-block:8px}
+}
+@media (max-width:600px){.hours th,.hours td{font-size:17px}table.hours th{width:34%}}
+/* hero badge: room for Sensei Neil's name; keep it visible on phones */
+.hero-badge{max-width:330px}
+.hero-badge b{white-space:nowrap}
+@media (max-width:600px){
+  .hero-badge{display:flex;left:12px;right:12px;bottom:12px;max-width:none;padding:12px 14px}
+  .hero-badge .belt{width:36px;flex:none}
+}

@@ -1113,3 +1113,28 @@ ul.mini b{font:700 1.15rem var(--f-body)}
   .hero-h .kicker{font-size:17px}
   .phero-media .photo,.bio-photo{box-shadow:none}
 }
+
+/* touch targets: 44px minimum for controls outside running text */
+.draftbar button,.draftbar .fb-link{min-height:44px;display:inline-flex;align-items:center}
+.crumbs a{display:inline-flex;align-items:center;min-height:44px}
+.book-contact a{min-height:44px}
+.more,.card .more,.inst .more,.more-link{display:inline-flex;align-items:center;min-height:44px}
+.btn-sm{min-height:44px}
+
+/* credentials strip on phones: one tidy row per credential */
+@media (max-width:600px){
+  .v-cred{padding-block:28px 32px}
+  .v-cred ul{grid-template-columns:minmax(0,1fr);row-gap:0;border-top:1px solid var(--line)}
+  .v-cred li,.v-cred li:nth-child(4){display:grid;grid-template-columns:minmax(0,10.5rem) minmax(0,1fr);gap:16px;align-items:baseline;border-left:0;border-bottom:1px solid var(--line);padding:16px 0}
+  .v-cred b{font-size:1.15rem}
+  .v-cred span{margin-top:0;font-size:17px;line-height:1.45}
+}
+@media (max-width:600px){
+  .btn{letter-spacing:.06em;text-align:center;line-height:1.3}
+}
+/* phones: keep opening hours on one line each, roomier footer links */
+@media (max-width:600px){
+  table.hours th{width:38%;padding-right:12px}
+  table.hours td{white-space:nowrap}
+  .foot li a{display:inline-block;padding-block:8px}
+}
