@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>G-Force Website Draft</title>
+<style>*{box-sizing:border-box}body{margin:0}[hidden]{display:none!important}</style>
+</head><body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Rajdhani:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&text=%E7%BE%A9%E5%8B%87%E4%BB%81%E7%A4%BC%E8%AA%A0%E5%90%8D%E8%AA%89%E5%BF%A0&display=swap">
+<link rel="stylesheet" href="site.css">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-cam" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+    <symbol id="i-family" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="6" r="2.5"/><circle cx="17" cy="6" r="2.5"/><circle cx="12" cy="12" r="2"/><path d="M3 21v-5a4 4 0 0 1 8 0M13 21v-5a4 4 0 0 1 8 0M9.5 21v-2.5a2.5 2.5 0 0 1 5 0V21"/></symbol>
+    <symbol id="i-child" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><path d="M12 8v7M7 10l5 1 5-1M9 21l3-6 3 6"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-4l2-5h12l2 5v4z"/><path d="M4 12h16"/><circle cx="7.5" cy="16.5" r="1.8"/><circle cx="16.5" cy="16.5" r="1.8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-balance" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2"/><path d="M12 7v7M4 10h16M8 21l4-7 4 7"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z"/></symbol>
+    <symbol id="i-shower" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V8a4 4 0 0 1 8 0"/><path d="M10 11h7a0 0 0 0 1 0 0 3.5 3.5 0 0 0-7 0z"/><path d="M11.5 15v1M14 15v2M16.5 15v1"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4.5 6.5l15 11M19.5 6.5l-15 11"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/></symbol>
+    <symbol id="i-dumbbell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 12h10M4 8v8M7 6v12M17 6v12M20 8v8"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><rect x="7" y="5" width="10" height="16" rx="4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M12 3v18M8.5 10v2M15.5 10v2"/></symbol>
+    <symbol id="i-access" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><path d="M5 8l7 1.5L19 8M12 9.5V15l-3 6M12 15l3 6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  </defs>
+<div class="draftbar" role="note">
+  <div class="wrap">
+    <span><b>Website draft, version 1</b> · Yellow notes mark info we still need.</span>
+    <span class="draft-actions"><a class="fb-link" href="https://docs.google.com/document/d/1uzqWdO9zn-hudRDo35GGOSpZNkl2xAtL5Y0gGxKTcqg/edit" target="_blank" rel="noopener">Leave feedback</a><button type="button" id="toggleNotes" aria-pressed="false">Hide draft notes</button></span>
+  </div>
+</div>
+<div class="util">
+  <div class="wrap">
+    <span><svg aria-hidden="true"><use href="#i-pin"/></svg>4240 Hicksville Road, Bethpage, NY 11714</span>
+    <span><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="todo">Phone # needed</span></span>
+  </div>
+</div>
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="G-Force MMA &amp; Fitness home">
+      <span class="g" aria-hidden="true">G</span>
+      <span class="wm"><b>FORCE</b><small>MMA &amp; FITNESS</small></span>
+    </a>
+    <nav class="nav" aria-label="Main" id="mainnav">
+      <div class="dd">
+        <button type="button" class="dd-btn" aria-expanded="false">Programs <svg aria-hidden="true"><use href="#i-chev"/></svg></button>
+        <div class="dd-menu">
+          <div><p class="dd-h">Kids &amp; teens</p><a href="little-warriors.html">Little Warriors</a><a href="kids-jiu-jitsu.html">Kids Jiu-Jitsu</a><a href="kids-kickboxing.html">Kids Kickboxing</a><a href="girls-wrestling.html">Girls&#x27; Wrestling</a></div>
+          <div><p class="dd-h">Adults</p><a href="jiu-jitsu.html">Brazilian Jiu-Jitsu</a><a href="kickboxing.html">Kickboxing</a><a href="hiit.html">Express HIIT</a></div>
+        </div>
+      </div>
+      <a href="schedule.html">Schedule</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-sm hdr-cta" href="#book">Book a Free Class</a>
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainnav" id="menuBtn"><svg aria-hidden="true"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+<main id="top">
+
+
+  <!-- 1. HERO -->
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow"><span class="belt" aria-hidden="true"><span class="tip"><i></i><i></i><i></i><i></i></span></span>Family-owned · Bethpage, NY</p>
+        <h1 id="h1" style="margin-top:18px">Martial arts for the <em>whole family</em> in Bethpage</h1>
+        <p class="lede">Kids' martial arts from age 3, girls' wrestling, and adult BJJ, kickboxing and HIIT. Taught by Neil, Dawn and Haley. Neil has trained for 29 years and taught since 2001.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#book">Book a Free Class <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-secondary" href="#programs">See Programs</a>
+        </div>
+        <p class="reassure"><svg aria-hidden="true"><use href="#i-check"/></svg>Your first class is free. No experience needed.</p>
+        <ul class="facts">
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-child"/></svg></span>Ages 3 to adult</li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-family"/></svg></span>Family-owned &amp; family-taught</li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-eye"/></svg></span>Parent viewing area</li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-check"/></svg></span>First class is free</li>
+        </ul>
+      </div>
+      <div class="hero-media">
+        <div class="photo main has-img"><img src="img/hero-kids-bjj.jpg" alt="Haley Gonzales teaching two kids in gis in front of the G-Force sign in Bethpage" style="object-position:center 8%" fetchpriority="high" decoding="async"></div>
+        <div class="photo inset has-img"><img src="img/little-warriors.jpg" alt="Four Little Warriors students kneeling in their gis" style="object-position:center" loading="lazy" decoding="async"></div>
+        <div class="hero-badge">
+          <span class="belt" aria-hidden="true"><span class="tip"><i></i><i></i><i></i><i></i></span></span>
+          <p><b>BJJ Black Belt</b>Head instructor, 29 years training</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PROOF -->
+  <section class="proof" aria-label="Why families trust G-Force">
+    <div class="wrap">
+      <ul>
+        <li><b>29 years</b><span>Sensei Neil on the mats, teaching since 2001</span></li>
+        <li><b>BJJ black belt</b><span>Under Roberto “Cyborg” Abreu</span></li>
+        <li><b>National champ</b><span>Haley: 2024 Fargo National Champion, 2× NY State</span></li>
+        <li><b>Safe &amp; certified</b><span>SafeSport, Virtus, CPR &amp; First Aid</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. PROGRAMS -->
+  <section id="programs" aria-labelledby="programs-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow"><span class="belt" aria-hidden="true"><span class="tip"><i></i><i></i><i></i><i></i></span></span>Programs</p>
+        <h2 id="programs-h">A class for every age</h2>
+        <p class="lede">Kids start at age 3 in Little Warriors. Parents can take BJJ, kickboxing or HIIT under the same roof.</p>
+      </div>
+
+      <div class="group-h" id="kids"><h3>Kids &amp; teens</h3><p>Confidence, focus and real self-defense</p></div>
+      <div class="grid g4">
+        <article class="card">
+          <div class="photo has-img"><img src="img/little-warriors.jpg" alt="Little Warriors students, ages 3 to 5, kneeling on the mat" style="object-position:center" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="chips"><span class="chip">Ages 3–5</span><span class="chip alt">Beginner</span></div>
+            <h4>Little Warriors</h4>
+            <p>Martial arts basics, balance, coordination and focus in a fun, safe class built for little ones.</p>
+            <div class="cfoot"><a class="more" href="little-warriors.html">Learn more</a><a class="btn btn-primary btn-sm" href="#book">Try free</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="photo has-img"><img src="img/kids-jiu-jitsu.jpg" alt="Girls' kids jiu-jitsu class in pink gis with their instructor" style="object-position:center 35%" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="chips"><span class="chip"><span class="todo">Ages ?</span></span></div>
+            <h4>Kids Jiu-Jitsu</h4>
+            <p>Escapes, positioning and practical self-defense, plus confidence, respect and teamwork.</p>
+            <div class="cfoot"><a class="more" href="kids-jiu-jitsu.html">Learn more</a><a class="btn btn-primary btn-sm" href="#book">Try free</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="photo has-img"><img src="img/kids-kickboxing.jpg" alt="Kids kickboxing class with gloves, posing with their instructors" style="object-position:center" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="chips"><span class="chip"><span class="todo">Ages ?</span></span></div>
+            <h4>Kids Kickboxing</h4>
+            <p>Punches, kicks and footwork in a full-body workout that builds focus and discipline.</p>
+            <div class="cfoot"><a class="more" href="kids-kickboxing.html">Learn more</a><a class="btn btn-primary btn-sm" href="#book">Try free</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="photo has-img"><img src="img/haley-medal.jpg" alt="Haley Gonzales with her medal at the BJJ Pride championship" style="object-position:center 30%" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="chips"><span class="chip">Middle &amp; high school</span><span class="chip alt">Girls</span></div>
+            <h4>Girls' Wrestling</h4>
+            <p>Run by Crash Girls Wrestling for middle and high school girls, from first-timers to competitors.</p>
+            <div class="cfoot"><a class="more" href="girls-wrestling.html">Learn more</a><a class="btn btn-primary btn-sm" href="#book">Try free</a></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="group-h adults"><h3>Adults</h3><p>All levels. Beginners welcome in every class.</p></div>
+      <div class="grid g3">
+        <article class="card">
+          <div class="photo need" role="img" aria-label="Adult Brazilian jiu-jitsu class"><span class="cap"><svg aria-hidden="true"><use href="#i-cam"/></svg><span><span class="todo">Photo needed</span> Adult BJJ class</span></span></div>
+          <div class="body">
+            <div class="chips"><span class="chip">Adults</span><span class="chip alt">All levels</span></div>
+            <h4>Brazilian Jiu-Jitsu</h4>
+            <p>Leverage over strength. Learn real self-defense, get fit and progress at your own pace.</p>
+            <div class="cfoot"><a class="more" href="jiu-jitsu.html">Learn more</a><a class="btn btn-primary btn-sm" href="#book">Try free</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="photo need" role="img" aria-label="Adult kickboxing class"><span class="cap"><svg aria-hidden="true"><use href="#i-cam"/></svg><span><span class="todo">Photo needed</span> Adult kickboxing class</span></span></div>
+          <div class="body">
+            <div class="chips"><span class="chip">Adults</span><span class="chip alt">All levels</span></div>
+            <h4>Kickboxing</h4>
+            <p>Punches, kicks, combinations and footwork in a high-energy, full-body workout.</p>
+            <div class="cfoot"><a class="more" href="kickboxing.html">Learn more</a><a class="btn btn-primary btn-sm" href="#book">Try free</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="photo need" role="img" aria-label="Express HIIT class"><span class="cap"><svg aria-hidden="true"><use href="#i-cam"/></svg><span><span class="todo">Photo needed</span> HIIT class</span></span></div>
+          <div class="body">
+            <div class="chips"><span class="chip">45 minutes</span><span class="chip alt">No experience needed</span></div>
+            <h4>Express HIIT</h4>
+            <p>Strength, cardio and functional movement in 45 minutes, at your own pace.</p>
+            <div class="cfoot"><a class="more" href="hiit.html">Learn more</a><a class="btn btn-primary btn-sm" href="#book">Try free</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PARENT OUTCOMES -->
+  <section class="mist" aria-labelledby="parents-h">
+    <div class="wrap split">
+      <div class="photo has-img"><img src="img/kids-lineup.jpg" alt="Kids in gloves and shin guards lined up with their instructor" style="object-position:center 40%" loading="lazy" decoding="async"></div>
+      <div>
+        <div class="sec-head" style="margin-bottom:0">
+          <p class="eyebrow"><span class="belt" aria-hidden="true"><span class="tip"><i></i><i></i><i></i><i></i></span></span>For parents</p>
+          <h2 id="parents-h">What your child builds here</h2>
+          <p class="lede">Our mission is to build strong bodies, develop good character and bring families together.</p>
+        </div>
+        <ul class="outcomes">
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-star"/></svg></span><div><h3>Confidence &amp; discipline</h3><p>Respect, self-control and the will to keep going when it gets hard.</p></div></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-target"/></svg></span><div><h3>Focus &amp; listening</h3><p>Following directions in a structured class.</p></div></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-balance"/></svg></span><div><h3>Balance &amp; coordination</h3><p>Body awareness and motor skills, through games and drills kids enjoy.</p></div></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><div><h3>Real self-defense</h3><p>Escapes, positioning and age-appropriate self-defense skills.</p></div></li>
+        </ul>
+        <p class="callout"><b>Dawn has taught kids' martial arts since 2003.</b> She started with preschool classes, and working with kids is still her favorite part of teaching.</p>
+        <div class="steps-cta"><a class="btn btn-primary" href="#book">Book Your Child's Free Class</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FAMILY / INSTRUCTORS -->
+  <section id="family" aria-labelledby="family-h">
+    <div class="wrap">
+      <div class="family-intro">
+        <div class="sec-head">
+          <p class="eyebrow"><span class="belt" aria-hidden="true"><span class="tip"><i></i><i></i><i></i><i></i></span></span>Your instructors</p>
+          <h2 id="family-h">Family-owned and family-taught</h2>
+        </div>
+        <p class="story">G-Force is a family-owned school. Neil, his wife Dawn and their two daughters started it with one goal: a welcoming place where kids, teens and adults train, challenge themselves and build lasting friendships.</p>
+      </div>
+      <div class="grid g3">
+        <article class="inst">
+          <div class="photo has-img"><img src="img/neil-gonzales.jpg" alt="Sensei Neil Gonzales in his gi and black belt" style="object-position:center 20%" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <p class="role">Founder &amp; Head Instructor</p>
+            <h3>Sensei Neil Gonzales</h3>
+            <ul>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>BJJ black belt under Roberto “Cyborg” Abreu</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>2nd-degree Karate black belt</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>29 years training, teaching since 2001</span></li>
+            </ul>
+            <a class="more" href="about.html#neil"><span>Read Neil's story</span> →</a>
+          </div>
+        </article>
+        <article class="inst">
+          <div class="photo need" role="img" aria-label="Dawn Rizzi"><span class="cap"><svg aria-hidden="true"><use href="#i-cam"/></svg><span><span class="todo">Dawn's photo needed</span></span></span></div>
+          <div class="body">
+            <p class="role">Co-Owner &amp; Instructor</p>
+            <h3>Dawn Rizzi</h3>
+            <ul>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Karate black belt, BJJ blue belt</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>20+ years teaching, preschool classes since 2003</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Virtus certified</span></li>
+            </ul>
+            <a class="more" href="about.html#dawn"><span>Read Dawn's story</span> →</a>
+          </div>
+        </article>
+        <article class="inst">
+          <div class="photo has-img"><img src="img/haley-gonzales.jpg" alt="Haley Gonzales, instructor and wrestling coach" style="object-position:center 20%" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <p class="role">Instructor &amp; Wrestling Coach</p>
+            <h3>Haley Gonzales</h3>
+            <ul>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>2024 Fargo National Champion</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>2× NY State &amp; 2× Nassau County Champion</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>BJJ blue belt, training since age 5</span></li>
+            </ul>
+            <a class="more" href="about.html#haley"><span>Read Haley's story</span> →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. VIRTUES -->
+  <section class="virtues" aria-labelledby="virtues-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow"><span class="belt" aria-hidden="true" style="background:#2A3024"><span class="tip"><i></i><i></i><i></i><i></i></span></span>Our values</p>
+        <h2 id="virtues-h">Seven virtues in every class</h2>
+        <p class="lede">Our values come from Bushido, the traditional Japanese warrior code. They guide how we train, how we treat each other and how we live off the mats. <span class="todo only-note">Kanji added by us, confirm OK</span></p>
+      </div>
+      <div class="vgrid">
+        <div class="v"><span class="k" lang="ja">義</span><span class="n">Gi</span><h3>Integrity</h3><p>Do what is right, even when no one is watching.</p></div>
+        <div class="v"><span class="k" lang="ja">勇</span><span class="n">Yū</span><h3>Courage</h3><p>Face challenges with confidence and never be afraid to try.</p></div>
+        <div class="v"><span class="k" lang="ja">仁</span><span class="n">Jin</span><h3>Compassion</h3><p>Show kindness and use your strength to lift people up.</p></div>
+        <div class="v"><span class="k" lang="ja">礼</span><span class="n">Rei</span><h3>Respect</h3><p>Treat instructors, teammates and family with courtesy.</p></div>
+        <div class="v"><span class="k" lang="ja">誠</span><span class="n">Makoto</span><h3>Honesty</h3><p>Be truthful, sincere and accountable for your actions.</p></div>
+        <div class="v"><span class="k" lang="ja">名誉</span><span class="n">Meiyo</span><h3>Honor</h3><p>Take pride in your actions and keep your promises.</p></div>
+        <div class="v"><span class="k" lang="ja">忠義</span><span class="n">Chūgi</span><h3>Loyalty</h3><p>Stand by your commitments and support your teammates.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. HOW THE FREE CLASS WORKS -->
+  <section aria-labelledby="steps-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow"><span class="belt" aria-hidden="true"><span class="tip"><i></i><i></i><i></i><i></i></span></span>Getting started</p>
+        <h2 id="steps-h">How your free class works</h2>
+      </div>
+      <ol class="steps">
+        <li><div class="num"><b>1</b><span class="belt" aria-hidden="true"><span class="tip"><i></i></span></span></div><h3>Book online</h3><p>Tell us who's training and which program you're curious about. It takes a minute.</p></li>
+        <li><div class="num"><b>2</b><span class="belt" aria-hidden="true"><span class="tip"><i></i><i></i></span></span></div><h3>Pick a time</h3><p>We'll text you to find a class that fits your week. <span class="todo only-note">Confirm response time</span></p></li>
+        <li><div class="num"><b>3</b><span class="belt" aria-hidden="true"><span class="tip"><i></i><i></i><i></i></span></span></div><h3>Try it free</h3><p>Kids jump in while parents watch from the viewing area. Adults, come ready to move. <span class="todo only-note">What to wear?</span></p></li>
+      </ol>
+      <div class="steps-cta"><a class="btn btn-primary" href="#book">Book a Free Class</a><p class="reassure"><svg aria-hidden="true"><use href="#i-check"/></svg>No experience needed</p></div>
+    </div>
+  </section>
+
+  <!-- 8. FACILITY -->
+  <section class="mist" aria-labelledby="facility-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow"><span class="belt" aria-hidden="true"><span class="tip"><i></i><i></i><i></i><i></i></span></span>The academy</p>
+        <h2 id="facility-h">Built for families</h2>
+        <p class="lede">Bring the kids, bring their siblings, stay and watch, or train yourself.</p>
+      </div>
+      <ul class="amen">
+        <li><span class="ic"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><b>Parent viewing area</b></li>
+        <li><span class="ic"><svg aria-hidden="true"><use href="#i-child"/></svg></span><b>Kids' area</b></li>
+        <li><span class="ic"><svg aria-hidden="true"><use href="#i-car"/></svg></span><b>Free parking</b></li>
+        <li><span class="ic"><svg aria-hidden="true"><use href="#i-shower"/></svg></span><b>Showers &amp; changing rooms</b></li>
+        <li><span class="ic"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><b>Lockers</b></li>
+        <li><span class="ic"><svg aria-hidden="true"><use href="#i-snow"/></svg></span><b>Air conditioned</b></li>
+        <li><span class="ic"><svg aria-hidden="true"><use href="#i-dumbbell"/></svg></span><b>Weights &amp; cardio</b></li>
+        <li><span class="ic"><svg aria-hidden="true"><use href="#i-bag"/></svg></span><b>Heavy bags</b></li>
+        <li><span class="ic"><svg aria-hidden="true"><use href="#i-wifi"/></svg></span><b>Free Wi-Fi</b></li>
+        <li><span class="ic"><svg aria-hidden="true"><use href="#i-access"/></svg></span><b>Accessible</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 9. REVIEWS (slot) -->
+  <section class="reviews-wrap" aria-label="Reviews placeholder" style="padding-block:56px 0">
+    <div class="wrap">
+      <div class="reviews-slot">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p><b>Google reviews go here</b> once G-Force has them. We'll pull real reviews from the Google Business Profile, never write our own. Start asking families for reviews now.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ -->
+  <section id="faq" aria-labelledby="faq-h">
+    <div class="wrap faq-grid">
+      <div class="sec-head">
+        <p class="eyebrow"><span class="belt" aria-hidden="true"><span class="tip"><i></i><i></i><i></i><i></i></span></span>Questions</p>
+        <h2 id="faq-h">Parents usually ask</h2>
+        <p class="lede">Don't see yours? Ask us at your free class, or send a message below.</p>
+      </div>
+      <div class="faq">
+        <details open><summary>What age can my child start?<span class="pm" aria-hidden="true"></span></summary><div class="a">As young as 3. Little Warriors is for ages 3–5. Older kids join Kids Jiu-Jitsu or Kids Kickboxing <span class="todo">confirm ages</span>, and middle and high school girls can join Crash Girls Wrestling.</div></details>
+        <details><summary>Does my child need any experience?<span class="pm" aria-hidden="true"></span></summary><div class="a">No. Every program welcomes beginners. Kids start with the basics and progress at their own pace.</div></details>
+        <details><summary>Can I watch my child's class?<span class="pm" aria-hidden="true"></span></summary><div class="a">Yes. We have a parent viewing area and a kids' area for siblings.</div></details>
+        <details><summary>Do kids have to compete?<span class="pm" aria-hidden="true"></span></summary><div class="a">No. Competition training is there for kids who want it. It's always their choice.</div></details>
+        <details><summary>Can parents train too?<span class="pm" aria-hidden="true"></span></summary><div class="a">Yes. Adults can take Brazilian Jiu-Jitsu, Kickboxing or our 45-minute Express HIIT. All levels are welcome, including first-timers.</div></details>
+        <details><summary>How much does it cost?<span class="pm" aria-hidden="true"></span></summary><div class="a">It depends on the program and how often you train. Your first class is free, and we'll go over options in person afterward.</div></details>
+        <details><summary>What should we wear to the first class?<span class="pm" aria-hidden="true"></span></summary><div class="a"><span class="todo">Need from Neil: gi, rash guard, gloves? Loaners for class one?</span></div></details>
+        <details><summary>Do you offer private lessons or birthday parties?<span class="pm" aria-hidden="true"></span></summary><div class="a">Yes, both. We also run after-school programs, seminars and corporate workshops. Ask us for details.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. LOCATION & HOURS -->
+  <section id="visit" class="mist" aria-labelledby="visit-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow"><span class="belt" aria-hidden="true"><span class="tip"><i></i><i></i><i></i><i></i></span></span>Visit us</p>
+        <h2 id="visit-h">Right on Hicksville Road in Bethpage</h2>
+      </div>
+      <div class="loc">
+        <div class="loc-card">
+          <h3>G-Force MMA &amp; Fitness</h3>
+          <p class="addr">4240 Hicksville Road<br>Bethpage, NY 11714</p>
+          <div class="row">
+            <a class="btn btn-secondary btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=4240+Hicksville+Road+Bethpage+NY+11714" target="_blank" rel="noopener">Get Directions</a>
+            <span class="btn btn-secondary btn-sm" style="pointer-events:none"><span class="todo">Call: phone # needed</span></span>
+          </div>
+          <table class="hours">
+            <caption class="sr">Hours</caption>
+            <tbody>
+              <tr><th scope="row">Monday – Friday</th><td>7:00 AM – 12:00 PM<br>3:30 PM – 9:30 PM</td></tr>
+              <tr><th scope="row">Saturday – Sunday</th><td>7:00 AM – 12:00 PM</td></tr>
+              <tr><th scope="row">Class schedule</th><td><a href="schedule.html">See this week's classes</a></td></tr>
+            </tbody>
+          </table>
+          <p class="towns">Families train with us from Bethpage, Plainview, Hicksville, Massapequa, Farmingdale, Levittown, Syosset, Seaford, Wantagh and nearby.</p>
+        </div>
+        <div class="map" role="img" aria-label="Map showing G-Force at 4240 Hicksville Road, Bethpage">
+          <span class="road r1"></span><span class="road r2"></span><span class="road r3"></span>
+          <span class="lbl" style="left:40.5%;top:6%">Hicksville Rd</span>
+          <span class="lbl" style="left:4%;top:60%">Bethpage</span>
+          <div class="pin"><span>G-Force</span><i></i></div>
+          <a class="btn btn-primary btn-sm open" href="https://www.google.com/maps/search/?api=1&amp;query=4240+Hicksville+Road+Bethpage+NY+11714" target="_blank" rel="noopener">Open in Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. BOOK -->
+  <section id="book" class="book" aria-labelledby="book-h">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow" style="color:#DCEBC6"><span class="belt" aria-hidden="true"><span class="tip" style="background:#fff"><i style="background:var(--gf-green)"></i><i style="background:var(--gf-green)"></i><i style="background:var(--gf-green)"></i><i style="background:var(--gf-green)"></i></span></span>Free first class</p>
+        <h2 id="book-h" style="margin-top:14px">Your first class is free</h2>
+        <p class="lede">Come see the mats, meet the family and try a class. Kids, teens and adults welcome.</p>
+        <ul class="why">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>No experience needed</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Kids from age 3, teens and adults</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Parents can watch from the viewing area</li>
+        </ul>
+        <p class="addr-mini">4240 Hicksville Road, Bethpage, NY 11714</p>
+      </div>
+      <form class="form" id="trial" novalidate aria-labelledby="form-h">
+        <h3 id="form-h">Book your free class</h3>
+        <p class="sub">Takes about a minute.</p>
+        <div class="fgrid">
+          <div class="fld full"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="fld"><label for="f-phone">Mobile phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+          <div class="fld"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <fieldset class="fld full"><legend>Who's training?</legend>
+            <div class="seg">
+              <label><input type="radio" name="who" value="me" id="f-who-me"><span>Myself</span></label>
+              <label><input type="radio" name="who" value="child" id="f-who-child"><span>My child</span></label>
+              <label><input type="radio" name="who" value="both" id="f-who-both"><span>Both / family</span></label>
+            </div>
+          </fieldset>
+          <div class="fld"><label for="f-prog">Program</label>
+            <select id="f-prog" name="program">
+              <option value="">Not sure, help me choose</option>
+              <optgroup label="Kids &amp; teens"><option>Little Warriors (3–5)</option><option>Kids Jiu-Jitsu</option><option>Kids Kickboxing</option><option>Girls' Wrestling</option></optgroup>
+              <optgroup label="Adults"><option>Brazilian Jiu-Jitsu</option><option>Kickboxing</option><option>Express HIIT</option></optgroup>
+            </select>
+          </div>
+          <div class="fld" id="age-wrap" hidden><label for="f-age">Child's age</label><input id="f-age" name="child_age" inputmode="numeric"></div>
+          <label class="consent full fld" style="grid-column:1/-1" for="f-sms"><input type="checkbox" id="f-sms" name="sms_consent"><span>Yes, G-Force MMA &amp; Fitness can text me about my free class and schedule. Msg &amp; data rates may apply. Reply STOP to opt out. <a href="#">Privacy</a> · <a href="#">Terms</a></span></label>
+        </div>
+        <button class="btn btn-primary" type="submit">Book My Free Class</button>
+        <p class="after">We'll text you to pick a class time.</p>
+        <div id="form-msg" class="form-msg" role="status" aria-live="polite" hidden></div>
+      </form>
+    </div>
+  </section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="index.html" aria-label="G-Force MMA & Fitness home"><span class="g" aria-hidden="true">G</span><span class="wm"><b>FORCE</b><small>MMA &amp; FITNESS</small></span></a>
+        <p style="margin-top:18px;max-width:34ch">Family-owned martial arts for kids, teens and adults in Bethpage, NY.</p>
+        <p style="margin-top:14px">4240 Hicksville Road<br>Bethpage, NY 11714<br><span class="todo">Phone</span> · gforcemmafitness@gmail.com</p>
+      </div>
+      <div>
+        <h4>Kids &amp; teens</h4>
+        <ul><li><a href="little-warriors.html">Little Warriors</a></li><li><a href="kids-jiu-jitsu.html">Kids Jiu-Jitsu</a></li><li><a href="kids-kickboxing.html">Kids Kickboxing</a></li><li><a href="girls-wrestling.html">Girls&#x27; Wrestling</a></li></ul>
+      </div>
+      <div>
+        <h4>Adults</h4>
+        <ul><li><a href="jiu-jitsu.html">Brazilian Jiu-Jitsu</a></li><li><a href="kickboxing.html">Kickboxing</a></li><li><a href="hiit.html">Express HIIT</a></li></ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul><li>Mon–Fri 7a–12p · 3:30–9:30p</li><li>Sat–Sun 7a–12p</li><li><a href="schedule.html">Class schedule</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact &amp; directions</a></li><li><a href="#book">Book a free class</a></li><li><span class="todo">Instagram · Facebook links</span></li></ul>
+      </div>
+    </div>
+    <div class="base">
+      <span><span class="belt" aria-hidden="true"><span class="tip"><i></i><i></i><i></i><i></i></span></span>© 2026 G-Force MMA LLC</span>
+      <span>Bethpage · Plainview · Hicksville · Massapequa · Farmingdale · Levittown</span>
+    </div>
+  </div>
+</footer>
+<div class="mcta">
+  <a class="btn btn-primary" href="#book">Book a Free Class</a>
+  <a class="call" href="contact.html" aria-label="Call G-Force (number coming)"><svg aria-hidden="true"><use href="#i-phone"/></svg></a>
+<script src="schedule-data.js"></script>
+<script src="site.js"></script>
+
+</body></html>
