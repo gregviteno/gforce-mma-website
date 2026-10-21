@@ -17,8 +17,10 @@ p{margin:0}
 a.v{display:flex;flex-direction:column;gap:8px;padding:28px;border:1px solid var(--line);border-radius:2px;background:#FBFAF6;color:inherit;text-decoration:none;transition:border-color .15s}
 a.v:hover{border-color:var(--moss)}
 a.v b{font:600 1.5rem/1.3 "Shippori Mincho",Georgia,serif;color:var(--ink)}
-a.v span{color:var(--muted);font-size:17px}
-a.v em{font-style:normal;color:var(--moss);font-weight:500;margin-top:8px}
+a.v>span{color:var(--muted);font-size:17px}
+a.v em{font-style:normal;margin-top:auto;display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:14px 22px;border:1px solid var(--moss);border-radius:2px;background:var(--moss);color:#fff;font-size:18px;font-weight:500;letter-spacing:.08em;transition:background .15s}
+a.v:hover em{background:#3B5A14}
+a.v>span:not(.tag){margin-bottom:20px}
 .tag{align-self:flex-start;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:2px;background:#E6EADB;color:#3B5A14}
 @media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}main{padding-block:56px}}
 </style></head>
@@ -26,8 +28,8 @@ a.v em{font-style:normal;color:var(--moss);font-weight:500;margin-top:8px}
 <p class="k">G-Force MMA &amp; Fitness · Bethpage, NY</p>
 <h1>Website previews</h1>
 <div class="grid">
-  <a class="v" href="v1/"><span class="tag">Current</span><b>Version 1: Original</b><span>The first draft, built from the intake form. Clean white layout in the G-Force green.</span><em>Open preview →</em></a>
-  <a class="v" href="zen-v2/"><b>Version 2: Zen</b><span>Calm and minimal. Warm paper tones, the G-Force green as the only accent, Japanese-inspired serif headings.</span><em>Open preview →</em></a>
-  <a class="v" href="neo-v3/"><b>Version 3: Neo</b><span>High-contrast and loud. Black sections, neon accents, heavy uppercase headlines.</span><em>Open preview →</em></a>
+  <a class="v" href="v1/" target="_blank" rel="noopener"><span class="tag">Current</span><b>Version 1: Original</b><span>The first draft, built from the intake form. Clean white layout in the G-Force green.</span><em>Open preview <span aria-hidden="true">→</span></em></a>
+  <a class="v" href="zen-v2/" target="_blank" rel="noopener"><b>Version 2: Zen</b><span>Calm and minimal. Warm paper tones, the G-Force green as the only accent, Japanese-inspired serif headings.</span><em>Open preview <span aria-hidden="true">→</span></em></a>
+  <a class="v" href="neo-v3/" target="_blank" rel="noopener"><b>Version 3: Neo</b><span>High-contrast and loud. Black sections, neon accents, heavy uppercase headlines.</span><em>Open preview <span aria-hidden="true">→</span></em></a>
 </div>
 </main></body></html>
