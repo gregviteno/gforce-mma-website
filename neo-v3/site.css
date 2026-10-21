@@ -857,3 +857,24 @@ ul.mini b{font:700 1.3rem var(--f-cond)}
   .foot li a{display:inline-block;padding-block:8px}
 }
 @media (max-width:600px){.stat{max-width:calc(100% - 12px);padding:14px 18px}}
+/* phones: Neil's badge becomes a caption under the photo so it never covers a face */
+@media (max-width:600px){
+  .v-hero-media{margin-left:0}
+  .v-hero-media .photo{aspect-ratio:4/3.6}
+  .stat{position:static;max-width:none;margin:0;border-top:0;padding:14px 18px 16px}
+  .stat b{font-size:1.45rem;line-height:1.05}
+  .stat span{font-size:15px;line-height:1.45;margin-top:4px}
+}
+/* phones: tighter type scale and spacing */
+@media (max-width:600px){
+  body{font-size:17px}
+  section{padding-block:60px}
+  .v-hero{padding-block:32px 56px}
+  .hero-h .name{font-size:clamp(2.6rem,12.5vw,3.4rem)}
+  .hero-h .kicker{font-size:1.05rem}
+  .hero-sub{font-size:1.15rem;margin-top:18px}
+  .hero-offer{font-size:17px}
+  .ticks li{font-size:15px;letter-spacing:.08em}
+  .ctas{margin-top:26px}
+  .lede{font-size:17px}
+}
