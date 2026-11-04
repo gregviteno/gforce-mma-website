@@ -18,9 +18,11 @@ All pages are `noindex` and `robots.txt` blocks crawlers while this is a draft.
 - **Decisions, rules and workflow for editing:** [`CLAUDE.md`](CLAUDE.md)
 - **Mobile QA scripts:** [`tools/`](tools/)
 
-## Pages (same in every version)
+**Zen (`zen-v2/`) is the chosen layout and the only version still being edited.**
 
-`index.html`, `about.html`, `contact.html`, `schedule.html`, and seven program pages: `little-warriors.html`, `kids-jiu-jitsu.html`, `kids-kickboxing.html`, `girls-wrestling.html`, `jiu-jitsu.html`, `kickboxing.html`, `hiit.html`.
+## Pages
+
+`index.html`, `about.html`, `contact.html`, `schedule.html`, and seven program pages: `little-ninjas.html`, `kids-kickboxing.html`, `kids-jiu-jitsu.html`, `girls-wrestling.html`, `kickboxing.html`, `jiu-jitsu.html`, `g-fit-360.html`. The frozen `v1/` and `neo-v3/` keep the old names `little-warriors.html` and `hiit.html`.
 
 Each version folder is self-contained: its own `site.css`, `site.js`, `img/`, and for zen-v2/neo-v3 also `booking.js` and `schedule-data.js` (v1 keeps its schedule in `schedule-data.js` too). zen-v2 self-hosts its fonts in `fonts/` + `fonts.css`.
 

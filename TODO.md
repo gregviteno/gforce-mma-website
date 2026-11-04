@@ -1,12 +1,14 @@
 # G-Force website: open items
 
-Last checked: 2026-10-21, by scanning every yellow `todo` note in all three versions plus the code.
-The content gaps below are identical in v1, zen-v2 and neo-v3. Fix each one in **all three**.
+Full scan of `todo` notes: 2026-10-21. Updated for Greg's edits on 2026-11-04.
+Zen (`zen-v2/`) is the chosen layout, so fix each item there only.
 
-Find any note on the site with: `grep -rn 'class="todo' v1 zen-v2 neo-v3`
+Find any note on the site with: `grep -rn 'class="todo' zen-v2`
 
 ## Needed from Neil / G-Force
 
+- [ ] **Two homepage hero photos:** Neil and Dawn doing BJJ, and women boxing. The panels are marked `Photo needed`; none of the supplied photos show either. Add each with an 800w and full-size WebP plus a JPG fallback, like `img/hero-family-kids*`, and check the headline doesn't cover a face.
+- [ ] **Is G-Fit 360 the same class as Express HIIT?** It was treated as a rename, so `g-fit-360.html`, the homepage card and the FAQ still describe a 45-minute interval workout.
 - [ ] **Phone number.** Header, footer, contact page, booking section and "Call" buttons on 11 pages (notes: `Phone`, `Phone # needed`, `Call: phone # needed`). The mobile bottom-bar phone button currently links to `contact.html`; point it at `tel:` once the number exists.
 - [ ] **Real class schedule** (a photo of the board works). Replace the sample data in each version's `schedule-data.js` (one line per class). The schedule page and the booking form's class times say "Sample times" until then.
 - [ ] **Ages for Kids Jiu-Jitsu and Kids Kickboxing.** `Ages ?` chips on the homepage cards and both program pages, plus `confirm ages` in the homepage FAQ.
@@ -14,11 +16,9 @@ Find any note on the site with: `grep -rn 'class="todo' v1 zen-v2 neo-v3`
 - [ ] **How fast they reply to a booking by text.** `Confirm response time` on the homepage step 2 and the booking section (index + contact).
 - [ ] **Which instructors teach each class.** `Confirm which instructors teach this class` on all 7 program pages.
 - [ ] **Program FAQs** (how often to come, belts/levels, gear). Placeholder `Starter page … Needs info` on all 7 program pages.
-- [ ] **Photos:** Dawn's headshot (8 pages) and adult BJJ, adult kickboxing and Express HIIT class photos (`Photo needed`). Add each image with 480w and full-size WebP plus a JPG fallback, like the existing ones in `img/`.
+- [ ] **Photos:** Dawn's headshot (8 pages) and adult BJJ, adult kickboxing and G-Fit 360 class photos (`Photo needed`). Add each image with 480w and full-size WebP plus a JPG fallback, like the existing ones in `img/`.
 - [ ] **Logo file** (PNG with transparent background or SVG). Header and footer use a stand-in "G FORCE" wordmark. Also make it the favicon.
 - [ ] **Instagram and Facebook links.** Footer on every page.
-- [ ] **Neil's bio, About page:** "From 2013 through 2026, Neil served as co-founder and Head Instructor of the Kids and Adult MMA program." Which school? (`Which school? Name it or reword`)
-- [ ] **Neil's OK on the reworded mission line**, About page (`Edited from Neil's wording; Neil to OK`).
 - [ ] **Real Google reviews** from the Business Profile. Homepage review boxes are placeholders. Never write reviews ourselves.
 - [ ] **Signed photo releases for the kids in the photos.** The preview link is public, so this matters now.
 - [ ] **Confirm Haley is his daughter.** The site says "their two daughters"; still an open question in the feedback doc.
@@ -26,7 +26,7 @@ Find any note on the site with: `grep -rn 'class="todo' v1 zen-v2 neo-v3`
 
 ## Decision for Greg
 
-- [ ] **Which version to launch:** v1 (Original, tagged "Current"), v2 (Zen) or v3 (Neo).
+- [ ] **Landing page tag:** the "Current" tag on the landing page is still on v1, although Zen is now the chosen layout.
 
 ## Technical work before launch
 

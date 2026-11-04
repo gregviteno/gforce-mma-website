@@ -1159,3 +1159,38 @@ ul.mini b{font:700 1.15rem var(--f-body)}
   .ctas{margin-top:26px}
   .lede{font-size:17px}
 }
+
+/* family hero (homepage): three photos behind one bold line and one button */
+.fam-hero{position:relative;padding:0;background:var(--ink);overflow:hidden}
+.fam-panels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));min-height:clamp(600px,calc(100svh - 150px),860px)}
+.fam-panel{border-radius:0;min-height:0;display:flex;align-items:flex-start}
+.fam-panel+.fam-panel{border-left:1px solid rgba(246,243,236,.25)}
+.photo.need.fam-panel{background:repeating-linear-gradient(135deg,rgba(246,243,236,.05) 0 14px,rgba(246,243,236,0) 14px 28px),var(--ink-3)}
+.fam-kids img{object-position:center top}
+.fam-hero::after{content:"";position:absolute;inset:auto 0 0;height:62%;background:linear-gradient(to top,rgba(20,19,17,.94) 0,rgba(20,19,17,.84) 60%,rgba(20,19,17,0) 100%);pointer-events:none}
+.fam-copy{position:absolute;z-index:1;inset:auto 0 0;display:flex;flex-direction:column;align-items:center;gap:28px;padding:0 24px 56px;text-align:center}
+.fam-copy h1{margin:0;max-width:20ch;font:700 clamp(2.6rem,4.6vw,4.6rem)/1.14 var(--f-display);letter-spacing:.01em;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.45)}
+@media (max-width:900px){
+  .fam-panels{grid-template-columns:repeat(2,minmax(0,1fr));min-height:0}
+  .fam-panel:not(.fam-kids){aspect-ratio:8/5}
+  .fam-kids{grid-column:1/-1;aspect-ratio:4/3;border-left:0!important;border-top:1px solid rgba(246,243,236,.25)}
+  .fam-hero::after{height:42%;background:linear-gradient(to top,rgba(20,19,17,.94) 0,rgba(20,19,17,.82) 75%,rgba(20,19,17,0) 100%)}
+  .fam-copy{padding-bottom:36px;gap:20px}
+  .fam-copy h1{max-width:18ch;font-size:clamp(2.4rem,6vw,3rem)}
+}
+@media (max-width:600px){
+  .fam-panel:not(.fam-kids){aspect-ratio:1/1}
+  .fam-kids{aspect-ratio:1/1.08}
+  .fam-hero::after{height:45%}
+  .fam-copy{padding:0 16px 22px;gap:14px}
+  .fam-copy h1{font-size:clamp(1.8rem,8vw,2.2rem);line-height:1.2}
+  .fam-copy .btn{width:100%;max-width:340px}
+  .fam-panel .cap{margin:8px;padding:6px 8px;font-size:15px}
+  .fam-panel .cap .todo{font-size:1em}
+}
+/* About: Neil's quote */
+.bio-quote{margin:26px 0 0;padding:4px 0 4px 22px;border-left:2px solid var(--moss);max-width:66ch}
+.bio-quote p{margin-top:12px;font:500 1.2rem/1.6 var(--f-display);color:var(--ink)}
+.bio-quote p:first-child{margin-top:0}
+.bio-quote footer{margin-top:12px;font-size:17px;color:var(--muted-light)}
+.bio .facts-list+p{margin-top:24px}

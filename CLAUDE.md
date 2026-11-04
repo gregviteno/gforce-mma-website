@@ -4,11 +4,18 @@ Read `README.md` for the layout and `TODO.md` for open work before changing anyt
 
 ## Rules from Greg (the user)
 
-- **Every content edit goes into all three versions** (`v1/`, `zen-v2/`, `neo-v3/`) so they stay uniform. The markup differs between v1 and zen/neo (e.g. v1's credentials strip is `.proof`, zen/neo's is `.v-cred`; v1's hero badge is `.hero-badge`, zen/neo's is `.stat`), so find the equivalent element in each.
+- **Zen is the chosen layout (Greg, 2026-11-04). Edit `zen-v2/` only.** `v1/` and `neo-v3/` are frozen at the 2026-10-21 content and no longer kept in sync, so the older decisions below still describe them but not Zen where the Zen section says otherwise.
 - **No hallucinating.** Only report what was verified: a screenshot, a grep, or a live check. If something wasn't checked, say so.
 - **No AI slop in copy:** no eyebrow labels above headings, no punchy two-part headings ("One roof. Every age."), no full stops at the end of headings, no "01/02" numbering on cards, no corny lines ("meet Neil, Dawn and Haley, the family who teaches every class"), no puffery ("Bethpage's best", "world-renowned"). Plain, specific wording. Keep Neil's own facts.
 - **Mobile must be immaculate.** Check 360, 390, 430 and 768px wide with the tools below before pushing. No horizontal overflow, 44px tap targets for controls, nothing covering faces in photos.
-- Don't invent facts. Neil started training in 1997, so in 2026 that's 29 years; the hero badge says "Nearly 30 years in martial arts" for that reason.
+- Don't invent facts. Neil started training in 1997. Greg's 2026-11-04 copy says "30 years training" and "three decades", so Zen uses 30 (strictly 29 in 2026, 30 from 2027).
+
+## Zen decisions from Greg, 2026-11-04 (these override the older list below)
+
+- **Homepage hero** (`.fam-hero`): family theme. Three background photos (Neil and Dawn doing BJJ, women boxing, kids group), the header tabs, one bold line "Martial Arts and Fitness available for the Whole Family!" and one "Book a Free Class" button to `#book`. No badge, sub-copy or checkmarks. Copy sits low so it never covers a face; re-check this whenever a photo changes. The kids panel is `img/hero-family-kids*` from `Photos – Classes/Kids Sparring.png`. The other two panels are `Photo needed` placeholders until the photos exist.
+- **Ticker:** Your First Class is Free · Beginner Friendly / No Experience Necessary · BJJ · Muay Thai / Kickboxing · Wrestling · Pre-school Programs · Self-Defense · Anti-Bullying · Family-owned in Bethpage · 4240 Hicksville Road NY.
+- **About page:** only the one-paragraph intro, "Meet the Family" with Greg's bios, and the booking band. The story, virtues and amenities sections were removed on purpose. Bio text is Greg's wording with typos fixed only.
+- **Programs and order** (menu, footer, cards, booking form): Kids & teens: Little Ninjas, Kids Kickboxing, Kids Jiu-Jitsu, Girls Wrestling. Adults: Kickboxing, Brazilian Jiu-Jitsu, G-Fit 360. Pages are `little-ninjas.html` and `g-fit-360.html`.
 
 ## Decisions already made (don't undo without asking)
 
