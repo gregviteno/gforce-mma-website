@@ -1195,3 +1195,101 @@ ul.mini b{font:700 1.15rem var(--f-body)}
 .bio-quote p:first-child{margin-top:0}
 .bio-quote footer{margin-top:12px;font-size:17px;color:var(--muted-light)}
 .bio .facts-list+p{margin-top:24px}
+
+/* =====================================================================
+   Soft pass (Greg, 2026-11-04): no sharp shapes. Rounded corners, tinted
+   panels instead of outlined boxes, spacing instead of rules, no accent
+   bars, no stripes or heavy shadows. Keep new components to this scale:
+   pill for controls and chips, 10px inputs, 16px photos, 20px panels.
+   ===================================================================== */
+:root{--line:rgba(30,29,26,.1);--r-btn:999px;--r-card:16px}
+
+/* buttons, chips and small controls become pills */
+.btn,.btn-primary::before,.btn-light::before,.form .btn-primary::before{border-radius:999px}
+.btn-secondary,:is(.v-ink,.mist,.phero,.virtues,.cta-band,.v-hero) .btn-secondary,:is(.v-ink,.mist,.phero) .loc-card .btn-secondary{border-color:rgba(30,29,26,.32)}
+.btn-ghost-light,.cta-band .btn-ghost-light{border-radius:999px}
+.chip,.seg span,.fchip{border-radius:999px}
+.chip{padding:7px 14px}
+.chip.alt,.phero .chip.alt{background:rgba(30,29,26,.05);border:0}
+.fchip{border-color:rgba(30,29,26,.18)}
+.tag{border:0;padding:0;border-radius:0}
+.logo .g{border-radius:12px}
+.menu-btn{border-radius:12px}
+.mcta .call{border-color:rgba(30,29,26,.32);border-radius:50%}
+
+/* photos */
+.photo,.card .photo,.inst .photo,.rel .photo,.v-hero-media .photo,.split .photo.framed,.phero-media .photo,.bio-photo{border-radius:16px}
+.card .photo,.inst .photo{border:0}
+.photo,.photo.need{background:var(--moss-tint)}
+.photo .cap{border-radius:10px}
+
+/* program, instructor and related cards: no box, just photo and text */
+.card,.inst,.rel{background:transparent;border:0;border-radius:16px;overflow:visible}
+.card:hover,.rel:hover{border:0;transform:none;box-shadow:none}
+.card .photo,.inst .photo,.rel .photo{transition:opacity .2s}
+.card:hover .photo,.rel:hover .photo{opacity:.9}
+.card .body{padding:20px 2px 0}
+.inst>:not(.photo){padding-inline:2px}
+.rel-b{padding:18px 2px 0}
+
+/* everything else that was an outlined box becomes a soft tinted panel */
+.amen li,.loc-card,.ben li,.cq,.form,.day,ul.mini li,.rv,.steps li{background:var(--paper-2);border:0;border-radius:20px;box-shadow:none}
+.v-ink .amen li,:is(.v-ink,.mist,.cta-band) :is(.loc-card,.ben li,.cq,.form,.day,ul.mini li,.rv){background:var(--paper)}
+.v-ink .amen li{border:0}
+.rv.big{background:var(--moss-tint)}
+.form,.form:not(#x){box-shadow:none}
+.form-top{border-bottom:0}
+.fld input,.fld select{border-color:rgba(30,29,26,.26);border-radius:10px}
+.seg span{border-color:rgba(30,29,26,.26)}
+.slot span{border-color:rgba(30,29,26,.26);border-radius:12px}
+.form-msg{border:0;border-radius:12px}
+.sample-note,.starter{border:0;border-radius:14px}
+.dd-menu{border:0;border-radius:18px;box-shadow:0 18px 50px rgba(30,29,26,.1)}
+.dd-menu a{border-radius:8px}
+.nav.open .dd-menu{box-shadow:none;border-radius:0}
+.nav.open .dd-menu a{border-radius:0}
+
+/* accent bars become tints or nothing */
+.callout{border:0;border-radius:20px;background:var(--moss-tint);padding:22px 26px}
+.bio-quote{border:0;padding:0}
+.stat{border:0;border-radius:16px;box-shadow:none}
+ul.mini li{border:0}
+.nav a[aria-current="page"]{box-shadow:none}
+.cls{border:0;border-radius:12px;background:var(--moss-tint)}
+.cls.adults{background:var(--paper)}
+.cls:hover,.cls.adults:hover{box-shadow:inset 0 0 0 1px rgba(75,112,27,.5)}
+.day h3{border-bottom:0;padding-bottom:0}
+
+/* spacing does the work the hard rules used to do */
+.tick,.crumbs{border:0}
+.hdr{border-bottom-color:transparent}
+.book,.cta-band{border-top:0}
+.v-cred li,.v-cred li:nth-child(4){border-left:0;padding-left:0}
+.nums li{border-right:0}
+.card .more,.more-link,.inst .more span{border-bottom-color:rgba(75,112,27,.45)}
+
+/* map placeholder: no grid or diamond */
+.map{border:0;border-radius:20px;background:var(--moss-tint)}
+.map .road{box-shadow:none;background:rgba(255,255,255,.75);border-radius:999px}
+.map .pin span{border-radius:999px;padding-inline:16px}
+.map .pin i{width:10px;height:10px;border-radius:50%;background:var(--ink);transform:none;margin-top:6px}
+
+/* family hero: one rounded frame set in from the page edge, no seams */
+.fam-hero{margin:16px 16px 0;border-radius:24px}
+.fam-panel,.fam-kids{border-radius:0}
+.fam-panel+.fam-panel{border-left:0}
+.fam-hero::after{background:linear-gradient(to top,rgba(20,19,17,.92) 0,rgba(20,19,17,.8) 55%,rgba(20,19,17,.35) 82%,rgba(20,19,17,0) 100%)}
+@media (max-width:900px){
+  .fam-hero{margin:12px 12px 0;border-radius:20px}
+  .fam-kids{border-top:0}
+  .fam-hero::after{background:linear-gradient(to top,rgba(20,19,17,.92) 0,rgba(20,19,17,.8) 70%,rgba(20,19,17,.3) 90%,rgba(20,19,17,0) 100%)}
+}
+@media (max-width:600px){
+  .fam-hero{margin:8px 8px 0;border-radius:18px}
+  .nums li{border-bottom:1px solid var(--line)}
+  .v-cred ul{border-top:0}
+  .v-cred li,.v-cred li:nth-child(4){border-bottom:1px solid var(--line)}
+  .v-cred li:last-child{border-bottom:0}
+  .callout{padding:18px 20px}
+  .stat{border-radius:0 0 16px 16px}
+}

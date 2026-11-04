@@ -16,6 +16,7 @@ Read `README.md` for the layout and `TODO.md` for open work before changing anyt
 - **Ticker:** Your First Class is Free · Beginner Friendly / No Experience Necessary · BJJ · Muay Thai / Kickboxing · Wrestling · Pre-school Programs · Self-Defense · Anti-Bullying · Family-owned in Bethpage · 4240 Hicksville Road NY.
 - **About page:** only the one-paragraph intro, "Meet the Family" with Greg's bios, and the booking band. The story, virtues and amenities sections were removed on purpose. Bio text is Greg's wording with typos fixed only.
 - **Programs and order** (menu, footer, cards, booking form): Kids & teens: Little Ninjas, Kids Kickboxing, Kids Jiu-Jitsu, Girls Wrestling. Adults: Kickboxing, Brazilian Jiu-Jitsu, G-Fit 360. Pages are `little-ninjas.html` and `g-fit-360.html`. G-Fit 360 keeps the Express HIIT description, because the intake files only ever mention Express HIIT and Greg said to use the G-Fit 360 name.
+- **No sharp shapes** (the "Soft pass" at the end of `zen-v2/site.css`). Pills for buttons and chips, 10px inputs, 16px photos, 20px panels. Tinted panels instead of outlined boxes, spacing instead of rules, no accent bars, stripes or heavy shadows. Program and instructor cards have no box. The hero is one rounded frame set in from the page edge. Build new components to this scale.
 
 ## Decisions already made (don't undo without asking)
 
