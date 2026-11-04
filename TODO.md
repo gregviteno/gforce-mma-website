@@ -7,8 +7,7 @@ Find any note on the site with: `grep -rn 'class="todo' zen-v2`
 
 ## Needed from Neil / G-Force
 
-- [ ] **Two homepage hero photos:** Neil and Dawn doing BJJ, and women boxing. The panels are marked `Photo needed`; none of the supplied photos show either. Add each with an 800w and full-size WebP plus a JPG fallback, like `img/hero-family-kids*`, and check the headline doesn't cover a face.
-- [ ] **Is G-Fit 360 the same class as Express HIIT?** It was treated as a rename, so `g-fit-360.html`, the homepage card and the FAQ still describe a 45-minute interval workout.
+- [ ] **Two real homepage hero photos:** Neil and Dawn doing BJJ, and women boxing. Both panels use stock placeholders for now, from https://www.pexels.com/photo/woman-grabbing-a-man-6765030/ and https://www.pexels.com/photo/woman-wearing-boxing-gloves-punching-a-punching-bag-5750760/. Replace `img/hero-placeholder-*` before launch, delete the "Placeholder" notes, and check the headline doesn't cover a face.
 - [ ] **Phone number.** Header, footer, contact page, booking section and "Call" buttons on 11 pages (notes: `Phone`, `Phone # needed`, `Call: phone # needed`). The mobile bottom-bar phone button currently links to `contact.html`; point it at `tel:` once the number exists.
 - [ ] **Real class schedule** (a photo of the board works). Replace the sample data in each version's `schedule-data.js` (one line per class). The schedule page and the booking form's class times say "Sample times" until then.
 - [ ] **Ages for Kids Jiu-Jitsu and Kids Kickboxing.** `Ages ?` chips on the homepage cards and both program pages, plus `confirm ages` in the homepage FAQ.
@@ -21,12 +20,7 @@ Find any note on the site with: `grep -rn 'class="todo' zen-v2`
 - [ ] **Instagram and Facebook links.** Footer on every page.
 - [ ] **Real Google reviews** from the Business Profile. Homepage review boxes are placeholders. Never write reviews ourselves.
 - [ ] **Signed photo releases for the kids in the photos.** The preview link is public, so this matters now.
-- [ ] **Confirm Haley is his daughter.** The site says "their two daughters"; still an open question in the feedback doc.
 - [ ] **Membership terms** (contract or month-to-month). Not on the site anywhere; could go in the FAQ.
-
-## Decision for Greg
-
-- [ ] **Landing page tag:** the "Current" tag on the landing page is still on v1, although Zen is now the chosen layout.
 
 ## Technical work before launch
 

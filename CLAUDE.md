@@ -8,14 +8,14 @@ Read `README.md` for the layout and `TODO.md` for open work before changing anyt
 - **No hallucinating.** Only report what was verified: a screenshot, a grep, or a live check. If something wasn't checked, say so.
 - **No AI slop in copy:** no eyebrow labels above headings, no punchy two-part headings ("One roof. Every age."), no full stops at the end of headings, no "01/02" numbering on cards, no corny lines ("meet Neil, Dawn and Haley, the family who teaches every class"), no puffery ("Bethpage's best", "world-renowned"). Plain, specific wording. Keep Neil's own facts.
 - **Mobile must be immaculate.** Check 360, 390, 430 and 768px wide with the tools below before pushing. No horizontal overflow, 44px tap targets for controls, nothing covering faces in photos.
-- Don't invent facts. Neil started training in 1997. Greg's 2026-11-04 copy says "30 years training" and "three decades", so Zen uses 30 (strictly 29 in 2026, 30 from 2027).
+- Don't invent facts. Neil started training in 1997. The 2026-11-04 copy came from G-Force and says "30 years training" and "three decades", and Greg confirmed it's their wording, so Zen uses 30. Treat their copy as final.
 
 ## Zen decisions from Greg, 2026-11-04 (these override the older list below)
 
-- **Homepage hero** (`.fam-hero`): family theme. Three background photos (Neil and Dawn doing BJJ, women boxing, kids group), the header tabs, one bold line "Martial Arts and Fitness available for the Whole Family!" and one "Book a Free Class" button to `#book`. No badge, sub-copy or checkmarks. Copy sits low so it never covers a face; re-check this whenever a photo changes. The kids panel is `img/hero-family-kids*` from `Photos – Classes/Kids Sparring.png`. The other two panels are `Photo needed` placeholders until the photos exist.
+- **Homepage hero** (`.fam-hero`): family theme. Three background photos (Neil and Dawn doing BJJ, women boxing, kids group), the header tabs, one bold line "Martial Arts and Fitness available for the Whole Family!" and one "Book a Free Class" button to `#book`. No badge, sub-copy or checkmarks. Copy sits low so it never covers a face; re-check this whenever a photo changes. The kids panel is `img/hero-family-kids*` from `Photos – Classes/Kids Sparring.png`. The other two panels are Pexels stock photos standing in until G-Force sends the real ones (`img/hero-placeholder-*`, each with a small "Placeholder" draft note). Replace them before launch.
 - **Ticker:** Your First Class is Free · Beginner Friendly / No Experience Necessary · BJJ · Muay Thai / Kickboxing · Wrestling · Pre-school Programs · Self-Defense · Anti-Bullying · Family-owned in Bethpage · 4240 Hicksville Road NY.
 - **About page:** only the one-paragraph intro, "Meet the Family" with Greg's bios, and the booking band. The story, virtues and amenities sections were removed on purpose. Bio text is Greg's wording with typos fixed only.
-- **Programs and order** (menu, footer, cards, booking form): Kids & teens: Little Ninjas, Kids Kickboxing, Kids Jiu-Jitsu, Girls Wrestling. Adults: Kickboxing, Brazilian Jiu-Jitsu, G-Fit 360. Pages are `little-ninjas.html` and `g-fit-360.html`.
+- **Programs and order** (menu, footer, cards, booking form): Kids & teens: Little Ninjas, Kids Kickboxing, Kids Jiu-Jitsu, Girls Wrestling. Adults: Kickboxing, Brazilian Jiu-Jitsu, G-Fit 360. Pages are `little-ninjas.html` and `g-fit-360.html`. G-Fit 360 keeps the Express HIIT description, because the intake files only ever mention Express HIIT and Greg said to use the G-Fit 360 name.
 
 ## Decisions already made (don't undo without asking)
 
@@ -28,7 +28,7 @@ Read `README.md` for the layout and `TODO.md` for open work before changing anyt
 - **Hero checkmarks** stack vertically, one per line.
 - **Zen (v2)** is the calm "washi paper, sumi ink, brand moss #4B701B" design: Shippori Mincho headings, Zen Kaku Gothic New body, self-hosted Latin subsets (`zen-v2/fonts/`), logo wordmark in Rajdhani/Montserrat (brand fonts from the intake). The zen layer is appended at the end of `zen-v2/site.css`.
 - **Neo (v3)** is the earlier bold black/volt design. **v1** is the original first draft, now content-synced.
-- **Landing page:** cards in order v1, v2, v3; only v1 has the "Current" tag; no intro sentence; big green "Open preview" buttons; each opens in a new tab.
+- **Landing page:** cards in order v1, v2, v3; only Zen (v2) has the "Current" tag; no intro sentence; big green "Open preview" buttons; each opens in a new tab.
 
 ## Workflow
 

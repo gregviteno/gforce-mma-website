@@ -1165,7 +1165,7 @@ ul.mini b{font:700 1.15rem var(--f-body)}
 .fam-panels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));min-height:clamp(600px,calc(100svh - 150px),860px)}
 .fam-panel{border-radius:0;min-height:0;display:flex;align-items:flex-start}
 .fam-panel+.fam-panel{border-left:1px solid rgba(246,243,236,.25)}
-.photo.need.fam-panel{background:repeating-linear-gradient(135deg,rgba(246,243,236,.05) 0 14px,rgba(246,243,236,0) 14px 28px),var(--ink-3)}
+.fam-panel .cap{position:relative;z-index:1}
 .fam-kids img{object-position:center top}
 .fam-hero::after{content:"";position:absolute;inset:auto 0 0;height:62%;background:linear-gradient(to top,rgba(20,19,17,.94) 0,rgba(20,19,17,.84) 60%,rgba(20,19,17,0) 100%);pointer-events:none}
 .fam-copy{position:absolute;z-index:1;inset:auto 0 0;display:flex;flex-direction:column;align-items:center;gap:28px;padding:0 24px 56px;text-align:center}
@@ -1185,7 +1185,8 @@ ul.mini b{font:700 1.15rem var(--f-body)}
   .fam-copy{padding:0 16px 22px;gap:14px}
   .fam-copy h1{font-size:clamp(1.8rem,8vw,2.2rem);line-height:1.2}
   .fam-copy .btn{width:100%;max-width:340px}
-  .fam-panel .cap{margin:8px;padding:6px 8px;font-size:15px}
+  .fam-panel:not(.fam-kids){align-items:flex-end}
+  .fam-panel .cap{margin:6px;padding:3px 5px;font-size:15px}
   .fam-panel .cap .todo{font-size:1em}
 }
 /* About: Neil's quote */

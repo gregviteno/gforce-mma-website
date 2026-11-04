@@ -6,8 +6,8 @@ Draft website for G-Force MMA & Fitness, a family-owned martial arts school at 4
 
 | Folder | Version | Live preview |
 |---|---|---|
-| `v1/` | Version 1: Original (tagged "Current") | https://gregviteno.github.io/gforce-mma-website/v1/ |
-| `zen-v2/` | Version 2: Zen | https://gregviteno.github.io/gforce-mma-website/zen-v2/ |
+| `v1/` | Version 1: Original | https://gregviteno.github.io/gforce-mma-website/v1/ |
+| `zen-v2/` | Version 2: Zen (tagged "Current") | https://gregviteno.github.io/gforce-mma-website/zen-v2/ |
 | `neo-v3/` | Version 3: Neo | https://gregviteno.github.io/gforce-mma-website/neo-v3/ |
 | `zen-v4/` | Redirect only (old zen link → `zen-v2/`) | |
 | `index.html` | Landing page linking the three versions (each opens in a new tab) | |
