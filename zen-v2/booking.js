@@ -56,6 +56,7 @@
     if (!id) { slotWrap.hidden = true; return; }
     var list = S.filter(function (c) { return c.program === id; })
       .sort(function (a, b) { return ORDER.indexOf(a.day) - ORDER.indexOf(b.day) || mins(a.start) - mins(b.start); });
+    if (!list.length) { slotWrap.hidden = true; return; }
     var html = list.map(function (c, i) {
       var v = DAYS[c.day] + ' ' + c.start + (c.note ? ' (' + c.note + ')' : '');
       return '<label class="slot"><input type="radio" name="slot" value="' + v + '"' + '><span><b>' + DAYS[c.day] + '</b>' + c.start + (c.end ? ' – ' + c.end : '') + (c.note ? ' · ' + c.note : '') + '</span></label>';
@@ -90,6 +91,19 @@
         ? "You're booked in. We'll text you shortly to confirm" + (data.slot && data.slot !== 'Text me other times' ? ' ' + data.slot + '.' : ' a class time.')
         : 'Draft only: on the live site this books your free class' + (data.slot ? ' (' + data.slot + ')' : '') + ' and sends you a text.';
       if (CFG.formEndpoint) f.reset();
+    }
+    if (!CFG.formEndpoint && CFG.mailto) {
+      /* No booking system connected yet: hand the request to the visitor's email app */
+      var who = { child: 'My child', me: 'Myself', family: 'Both / family' }[data.who] || data.who || '';
+      var lines = ['Free class request', '', 'Name: ' + (data.name || ''), 'Mobile: ' + (data.phone || ''), 'Email: ' + (data.email || ''),
+        "Who's training: " + who, 'Program: ' + data.program_name];
+      if (data.child_age) lines.push("Child's age: " + data.child_age);
+      if (data.slot) lines.push('Class time: ' + data.slot);
+      lines.push('OK to text me: ' + (data.sms_consent ? 'Yes' : 'No'));
+      track('generate_lead', { program: data.program || 'not_sure', who: data.who || '', method: 'email' });
+      location.href = 'mailto:' + CFG.mailto + '?subject=' + encodeURIComponent('Free class request: ' + (data.name || '')) + '&body=' + encodeURIComponent(lines.join('\n'));
+      msg.textContent = 'Your email app should open with your details filled in. Press send and we will get back to you to confirm your class. If nothing opens, email us at ' + CFG.mailto + '.';
+      return;
     }
     if (!CFG.formEndpoint) { done(); return; }
     btn.disabled = true; btn.textContent = 'Booking…';

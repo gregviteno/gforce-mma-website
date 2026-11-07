@@ -1293,3 +1293,11 @@ ul.mini li{border:0}
   .callout{padding:18px 20px}
   .stat{border-radius:0 0 16px 16px}
 }
+
+/* public build: "photo needed" spots become calm name tiles (see tools/build-live.py) */
+.photo.need{align-items:center;justify-content:center}
+.ph-name{font:600 clamp(1.25rem,2vw,1.7rem)/1.25 var(--f-display);color:var(--moss-deep);text-align:center;padding:16px;letter-spacing:.01em}
+.card-media,a.rel,.card-media:hover{text-decoration:none}
+/* outline button on the light booking band (was white on paper) */
+.btn-ghost-light,.cta-band .btn-ghost-light{color:var(--ink);border-color:rgba(30,29,26,.32)}
+.btn-ghost-light:hover,.cta-band .btn-ghost-light:hover{background:var(--ink);color:var(--paper)}
