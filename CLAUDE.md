@@ -45,6 +45,17 @@ Read `README.md` for the layout and `TODO.md` for open work before changing anyt
    Plain `chrome --screenshot` can't go below about 500px wide; these scripts use DevTools device emulation (Node 22+, no installs).
 3. Commit and push to `main`; confirm the Pages build and re-check the live URL.
 
+## Publishing the live site (g-forcemma.com)
+
+Soft launch went live 2026-11-07. The public site is a separate repo, `gregviteno/gforce-mma-live` (GitHub Pages, custom domain g-forcemma.com, DNS at GoDaddy under Neil's account via delegate access). Never edit that repo by hand; rebuild it from `zen-v2/`:
+
+```sh
+python3 tools/build-live.py /path/to/gforce-mma-live-checkout   # strips draft bar, yellow notes, sample times, phone lines; writes CNAME
+cd /path/to/gforce-mma-live-checkout && git add -A && git commit -m "Update from zen-v2" && git push
+```
+
+The build fails if any `todo` note, "Sample times", draft bar or "Placeholder" text survives. Pages stay `noindex` until Neil confirms the kids' photo releases. The booking form has no webhook yet, so the live build opens the visitor's email app addressed to gforcemmafitness@gmail.com.
+
 ## Source material (local only, not in this public repo)
 
 In `/Users/greg/Desktop/G-Force MMA & Fitness /`: the intake answers (`_draft.json`, `G-Force MMA & Fitness — Website Intake Summary.docx`), `G-Force — Website Build Notes.docx`, `G-Force Website_ Your Feedback.docx`, and the photo folders `Photos – Classes`, `Photos – Events`, `Team`. Kids' photos stay out of the repo except the optimized ones already used on the site.

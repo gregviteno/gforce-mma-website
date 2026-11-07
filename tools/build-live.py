@@ -64,8 +64,11 @@ def page(s, name):
         s = sub(s, r'<section aria-label="Weekly class schedule".*?</section>\n?', '', need=True)
     return s
 
-if OUT.exists(): shutil.rmtree(OUT)
-shutil.copytree(SRC, OUT, ignore=shutil.ignore_patterns('.DS_Store'))
+if OUT.exists():  # clear the old build but keep the live repo's .git
+    for p in OUT.iterdir():
+        if p.name == '.git': continue
+        shutil.rmtree(p) if p.is_dir() else p.unlink()
+shutil.copytree(SRC, OUT, ignore=shutil.ignore_patterns('.DS_Store'), dirs_exist_ok=True)
 for f in sorted(OUT.glob('*.html')):
     s = page(f.read_text(), f.name)
     left = re.findall(r'class="todo[^"]*"[^>]*>([^<]*)', s) + re.findall(r'Sample times|draftbar|Placeholder', s)

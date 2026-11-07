@@ -7,7 +7,7 @@ Find any note on the site with: `grep -rn 'class="todo' zen-v2`
 
 ## Needed from Neil / G-Force
 
-- [ ] **Two real homepage hero photos:** Neil and Dawn doing BJJ, and women boxing. Both panels use stock placeholders for now, from https://www.pexels.com/photo/woman-grabbing-a-man-6765030/ and https://www.pexels.com/photo/woman-wearing-boxing-gloves-punching-a-punching-bag-5750760/. Replace `img/hero-placeholder-*` before launch, delete the "Placeholder" notes, and check the headline doesn't cover a face.
+- [ ] **Two real homepage hero photos:** Neil and Dawn doing BJJ, and women boxing. Both panels use Pexels stock placeholders for now: https://www.pexels.com/photo/6765018/ (man and woman grappling in judo gis) and https://www.pexels.com/photo/8472150/ (two women gloving up in a ring). Replace `img/hero-placeholder-*` before launch, delete the "Placeholder" notes, and check the headline doesn't cover a face.
 - [ ] **Phone number.** Header, footer, contact page, booking section and "Call" buttons on 11 pages (notes: `Phone`, `Phone # needed`, `Call: phone # needed`). The mobile bottom-bar phone button currently links to `contact.html`; point it at `tel:` once the number exists.
 - [ ] **Real class schedule** (a photo of the board works). Replace the sample data in each version's `schedule-data.js` (one line per class). The schedule page and the booking form's class times say "Sample times" until then.
 - [ ] **Ages for Kids Jiu-Jitsu and Kids Kickboxing.** `Ages ?` chips on the homepage cards and both program pages, plus `confirm ages` in the homepage FAQ.
@@ -28,7 +28,7 @@ Find any note on the site with: `grep -rn 'class="todo' zen-v2`
 - [ ] **Tracking.** `ga4` and `metaPixel` are blank in `GF_CONFIG` (zen-v2, neo-v3). v1 has no slots for them.
 - [ ] **Privacy and Terms pages.** The links in the SMS consent line are `href="#"` (contact + index, all versions). Needed for text-message consent compliance.
 - [ ] **Link preview image + favicon.** `og:image` points to `https://g-forcemma.com/img/hero-kids-bjj.jpg` (not live yet); v1 has no `og:image`; no page has a favicon. The landing page (`/index.html`, the link we email) has no preview tags either.
-- [ ] **Domain / hosting for g-forcemma.com.** Canonical and `og:url` tags already point there.
+- [x] **Domain / hosting for g-forcemma.com.** Soft launch live 2026-11-07: GitHub Pages repo `gregviteno/gforce-mma-live`, GoDaddy DNS (4 GitHub A records on `@`, `www` CNAME to `gregviteno.github.io`). See "Publishing the live site" in `CLAUDE.md`.
 - [ ] **Map** is a drawn placeholder (`.map` block). "Open in Maps" works. Optional: real embed.
 - [ ] **At launch:** remove `<meta name="robots" content="noindex,nofollow">` from every page, delete or open up `robots.txt`, remove the draft bar and the yellow notes.
 - [ ] **Feedback doc sharing.** The "Leave feedback" button opens Greg's Google Doc (`1uzqWdO9zn-hudRDo35GGOSpZNkl2xAtL5Y0gGxKTcqg`). It must allow comments from anyone with the link. Not verifiable from the repo.
