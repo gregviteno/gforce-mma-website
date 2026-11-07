@@ -50,7 +50,8 @@ Read `README.md` for the layout and `TODO.md` for open work before changing anyt
 Soft launch went live 2026-11-07. The public site is a separate repo, `gregviteno/gforce-mma-live` (GitHub Pages, custom domain g-forcemma.com, DNS at GoDaddy under Neil's account via delegate access). Never edit that repo by hand; rebuild it from `zen-v2/`:
 
 ```sh
-python3 tools/build-live.py /path/to/gforce-mma-live-checkout   # strips draft bar, yellow notes, sample times, phone lines; writes CNAME
+gh repo clone gregviteno/gforce-mma-live /path/to/gforce-mma-live-checkout   # first time only
+python3 tools/build-live.py /path/to/gforce-mma-live-checkout   # strips draft bar, yellow notes, sample times, phone lines; writes CNAME; keeps .git
 cd /path/to/gforce-mma-live-checkout && git add -A && git commit -m "Update from zen-v2" && git push
 ```
 
