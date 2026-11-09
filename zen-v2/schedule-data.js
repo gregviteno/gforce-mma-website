@@ -43,8 +43,8 @@ window.GF_PROGRAMS = {
   "little-ninjas":   { name: "Little Ninjas",        ages: "Ages 3–5",              group: "kids",   page: "little-ninjas.html" },
   "kids-kickboxing": { name: "Kids Kickboxing",      ages: "Kids (ages TBD)",       group: "kids",   page: "kids-kickboxing.html" },
   "kids-jiu-jitsu":  { name: "Kids Jiu-Jitsu",       ages: "Kids (ages TBD)",       group: "kids",   page: "kids-jiu-jitsu.html" },
-  "girls-wrestling": { name: "Girls Wrestling",      ages: "Middle & high school",  group: "kids",   page: "girls-wrestling.html" },
-  "kickboxing":      { name: "Kickboxing",           ages: "Adults · all levels",   group: "adults", page: "kickboxing.html" },
-  "jiu-jitsu":       { name: "Brazilian Jiu-Jitsu",  ages: "Adults · all levels",   group: "adults", page: "jiu-jitsu.html" },
-  "g-fit-360":       { name: "G-Fit 360",            ages: "Adults · 45 minutes",   group: "adults", page: "g-fit-360.html" }
+  "girls-wrestling": { name: "Girls Wrestling",      ages: "Middle & High School",  group: "kids",   page: "girls-wrestling.html" },
+  "kickboxing":      { name: "Kickboxing",           ages: "Adults · All Levels",   group: "adults", page: "kickboxing.html" },
+  "jiu-jitsu":       { name: "Brazilian Jiu-Jitsu",  ages: "Adults · All Levels",   group: "adults", page: "jiu-jitsu.html" },
+  "g-fit-360":       { name: "G-Fit 360",            ages: "Adults · 45 Minutes",   group: "adults", page: "g-fit-360.html" }
 };

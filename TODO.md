@@ -7,6 +7,8 @@ Find any note on the site with: `grep -rn 'class="todo' zen-v2`
 
 ## Where things stand (2026-11-09)
 
+- **2026-11-09 client edits done:** capitals on the highlighted labels, six new program photos (kids kickboxing, kids jiu-jitsu, girls wrestling, adult kickboxing, adult BJJ, G-Fit 360), Haley's accolades cut to her own 8-item list on About.
+
 - **Live soft launch:** https://g-forcemma.com (HTTPS enforced, `noindex`), repo `gregviteno/gforce-mma-live`. To publish changes, edit `zen-v2/`, then follow "Publishing the live site" in `CLAUDE.md`.
 - **Preview with draft notes:** https://gregviteno.github.io/gforce-mma-website/zen-v2/
 - **Most useful next steps:**
@@ -27,7 +29,9 @@ Find any note on the site with: `grep -rn 'class="todo' zen-v2`
 - [ ] **How fast they reply to a booking by text.** `Confirm response time` on the homepage step 2 and the booking section (index + contact).
 - [ ] **Which instructors teach each class.** `Confirm which instructors teach this class` on all 7 program pages.
 - [ ] **Program FAQs** (how often to come, belts/levels, gear). Placeholder `Starter page … Needs info` on all 7 program pages.
-- [ ] **Photos:** Dawn's headshot (8 pages) and adult BJJ, adult kickboxing and G-Fit 360 class photos (`Photo needed`). Add each image with 480w and full-size WebP plus a JPG fallback, like the existing ones in `img/`.
+- [ ] **Photos:** Dawn's headshot (8 pages, `Photo needed`). Add it with 480w and full-size WebP plus a JPG fallback, like the existing ones in `img/`.
+- [ ] **"Extra photo" from Neil (2026-11-09 text):** Neil and two others with a championship belt. It was in the text thread but not in `NEW MEDIA UPDATES 11:9`, and no spot was named for it. Ask where it goes.
+- [ ] **Higher-quality originals** of the 2026-11-09 photos (Dawn offered to resend them another way). Current files came by text.
 - [ ] **Logo file** (PNG with transparent background or SVG). Header and footer use a stand-in "G FORCE" wordmark. Also make it the favicon.
 - [ ] **Instagram and Facebook links.** Footer on every page.
 - [ ] **Real Google reviews** from the Business Profile. Homepage review boxes are placeholders. Never write reviews ourselves.
