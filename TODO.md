@@ -5,6 +5,18 @@ Zen (`zen-v2/`) is the chosen layout, so fix each item there only.
 
 Find any note on the site with: `grep -rn 'class="todo' zen-v2`
 
+## Where things stand (2026-11-09)
+
+- **Live soft launch:** https://g-forcemma.com (HTTPS enforced, `noindex`), repo `gregviteno/gforce-mma-live`. To publish changes, edit `zen-v2/`, then follow "Publishing the live site" in `CLAUDE.md`.
+- **Preview with draft notes:** https://gregviteno.github.io/gforce-mma-website/zen-v2/
+- **Most useful next steps:**
+  1. Real cover photos, to replace the Pexels stand-ins.
+  2. Phone number.
+  3. Class schedule.
+  4. A way for the booking form to reach the gym without GoHighLevel.
+  5. Kids' photo releases, so the site can be opened to Google.
+- **Not yet decided:** switching the uppercase buttons, menu and ticker to sentence case (offered, no answer yet).
+
 ## Needed from Neil / G-Force
 
 - [ ] **Two real homepage hero photos:** Neil and Dawn doing BJJ, and women boxing. Both panels use Pexels stock placeholders for now: https://www.pexels.com/photo/6765018/ (man and woman grappling in judo gis) and https://www.pexels.com/photo/8472150/ (two women gloving up in a ring). Replace `img/hero-placeholder-*` before launch, delete the "Placeholder" notes, and check the headline doesn't cover a face.
@@ -24,14 +36,14 @@ Find any note on the site with: `grep -rn 'class="todo' zen-v2`
 
 ## Technical work before launch
 
-- [ ] **Connect the booking form.** zen-v2 / neo-v3: set `formEndpoint` in `window.GF_CONFIG` (top of each page's `<head>`) to the GoHighLevel inbound-webhook URL; `booking.js` posts to it. v1 has no endpoint at all: its form only shows a "Draft only" message (`v1/site.js`).
+- [ ] **Booking form delivery. No GoHighLevel for this client (Greg, 2026-11-09).** The live site currently opens the visitor's email app with their details, addressed to gforcemmafitness@gmail.com (the `mailto` fallback in `zen-v2/booking.js`, switched on by `tools/build-live.py`). That loses visitors who don't use an email app. To fix, pick a plain form service that emails the gym (decision for Greg), set `formEndpoint` in `window.GF_CONFIG` to it, and confirm `booking.js` posts in the format that service expects. Then test a real submission on the live site.
 - [ ] **Tracking.** `ga4` and `metaPixel` are blank in `GF_CONFIG` (zen-v2, neo-v3). v1 has no slots for them.
 - [ ] **Privacy and Terms pages.** The links in the SMS consent line are `href="#"` (contact + index, all versions). Needed for text-message consent compliance.
 - [ ] **Link preview image + favicon.** `og:image` points to `https://g-forcemma.com/img/hero-kids-bjj.jpg` (not live yet); v1 has no `og:image`; no page has a favicon. The landing page (`/index.html`, the link we email) has no preview tags either.
 - [x] **Domain / hosting for g-forcemma.com.** Soft launch live 2026-11-07: GitHub Pages repo `gregviteno/gforce-mma-live`, GoDaddy DNS (4 GitHub A records on `@`, `www` CNAME to `gregviteno.github.io`). See "Publishing the live site" in `CLAUDE.md`.
 - [x] **HTTPS for g-forcemma.com.** Live 2026-11-07 ~11:55am. The certificate covers g-forcemma.com and www, expires 2027-02-05 and GitHub renews it automatically. HTTPS is enforced, and www redirects to https://g-forcemma.com/. GitHub never requested the certificate until the custom domain was removed, left off for about 2.5 minutes, then re-added; an immediate remove and re-add did nothing.
 - [ ] **Map** is a drawn placeholder (`.map` block). "Open in Maps" works. Optional: real embed.
-- [ ] **At launch:** remove `<meta name="robots" content="noindex,nofollow">` from every page, delete or open up `robots.txt`, remove the draft bar and the yellow notes.
+- [ ] **Open the site to Google** (after the kids' photo releases): remove `<meta name="robots" content="noindex,nofollow">` from every `zen-v2/` page and rebuild the live site. The live build already strips the draft bar and yellow notes and has no `robots.txt`. Then add the site to Google Search Console and link it from the Google Business Profile.
 - [ ] **Feedback doc sharing.** The "Leave feedback" button opens Greg's Google Doc (`1uzqWdO9zn-hudRDo35GGOSpZNkl2xAtL5Y0gGxKTcqg`). It must allow comments from anyone with the link. Not verifiable from the repo.
 
 ## Housekeeping
