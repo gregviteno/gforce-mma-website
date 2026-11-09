@@ -12,16 +12,15 @@ Find any note on the site with: `grep -rn 'class="todo' zen-v2`
 - **Live soft launch:** https://g-forcemma.com (HTTPS enforced, `noindex`), repo `gregviteno/gforce-mma-live`. To publish changes, edit `zen-v2/`, then follow "Publishing the live site" in `CLAUDE.md`.
 - **Preview with draft notes:** https://gregviteno.github.io/gforce-mma-website/zen-v2/
 - **Most useful next steps:**
-  1. Real cover photos, to replace the Pexels stand-ins.
-  2. Phone number.
-  3. Class schedule.
-  4. A way for the booking form to reach the gym without GoHighLevel.
-  5. Kids' photo releases, so the site can be opened to Google.
+  1. Phone number.
+  2. Class schedule.
+  3. A way for the booking form to reach the gym without GoHighLevel.
+  4. Kids' photo releases, so the site can be opened to Google.
 - **Not yet decided:** switching the uppercase buttons, menu and ticker to sentence case (offered, no answer yet).
 
 ## Needed from Neil / G-Force
 
-- [ ] **Two real homepage hero photos:** Neil and Dawn doing BJJ, and women boxing. Both panels use Pexels stock placeholders for now: https://www.pexels.com/photo/6765018/ (man and woman grappling in judo gis) and https://www.pexels.com/photo/8472150/ (two women gloving up in a ring). Replace `img/hero-placeholder-*` before launch, delete the "Placeholder" notes, and check the headline doesn't cover a face.
+- [x] **Homepage hero photos.** The Pexels stand-ins were replaced on 2026-11-09 with G-Force's adult kickboxing group and adult BJJ photos. If Neil wants a real photo of him and Dawn doing BJJ there, swap `img/hero-bjj*`.
 - [ ] **Phone number.** Header, footer, contact page, booking section and "Call" buttons on 11 pages (notes: `Phone`, `Phone # needed`, `Call: phone # needed`). The mobile bottom-bar phone button currently links to `contact.html`; point it at `tel:` once the number exists.
 - [ ] **Real class schedule** (a photo of the board works). Replace the sample data in each version's `schedule-data.js` (one line per class). The schedule page and the booking form's class times say "Sample times" until then.
 - [ ] **Ages for Kids Jiu-Jitsu and Kids Kickboxing.** `Ages ?` chips on the homepage cards and both program pages, plus `confirm ages` in the homepage FAQ.
