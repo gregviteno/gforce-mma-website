@@ -66,6 +66,14 @@ Zen 2.0 in light mode, at Greg's request. Same markup as Zen 2.0 (copied after t
 
 `zen-3.0/motion.js` plus the "Zen 3.0 motion" block at the end of `zen-3.0/site.css` copy the micro-animations of fenriz-gym.com (taken from its GSAP code and Webflow interaction data): headline letter swap on every page title, heading bars wiping in, hero accent flicker, content photos rising and untilting on scroll, photo breaks zooming out on scroll, black-and-white program tiles that take a green tint with a Learn More button on hover, black-and-white coach cards that turn to color on hover, button fill wipe with gradient border, link underline wipe, hero photo tilt toward the pointer, menu fade with staggered links, header shadow on scroll, logo tilt on hover. The first-class section is black with Haley's portrait shown three times (faint to solid) as Fenriz's trial-training figure trail; `mix-blend-mode:lighten` hides the photo's black background. Nothing animates when the visitor prefers reduced motion (`html.motion` is only set by the inline head script when it isn't requested). Program tiles carry no description (Greg, 2026-11-09: "less text, let the photo and title emphasize").
 
+## Live site shows only what we have info for (Greg, 2026-11-09)
+
+`tools/build-live.py` removes, on the live build only: everything schedule-related (schedule.html becomes a redirect to contact.html), text-message promises and the SMS consent box, the Instructors section on program pages, the Follow Us column, reviews, phone lines, and empty FAQ/notes. Dawn's missing photo becomes a "DR" monogram tile. The full list, and how to bring each item back, is in TODO.md under "Hidden on the live site until we have the info". The map is a real Google Maps embed in `zen-3.0/` itself.
+
+Copy pass (/no-ai-slop, 2026-11-09): G-Force's own text (bios, quote, mission, intake program copy, hero line, ticker, accolades) is final. Build-written lines were edited to drop puffery, filler and invented claims (e.g. "There's no sales pitch at the door", "done right", "kids can actually use", "one stripe at a time"). Keep new copy plain and sourced.
+
+The hero is three separate photo cards under the headline (Greg: "not a collage").
+
 ## Publishing the live site (g-forcemma.com)
 
 Soft launch went live 2026-11-07 (built from `zen-v2/`); since 2026-11-09 it is built from `zen-3.0/`. The public site is a separate repo, `gregviteno/gforce-mma-live` (GitHub Pages, custom domain g-forcemma.com, DNS at GoDaddy under Neil's account via delegate access). Never edit that repo by hand; rebuild it from `zen-3.0/` (the script's default source; pass a folder name as the second argument to build another):

@@ -78,15 +78,19 @@
   addEventListener('resize', onScroll);
   frame();
 
-  /* 7. Hero photos tilt toward the pointer (Fenriz img-auto mouse move), desktop only. */
-  var hero = document.querySelector('.z2-hero'), media = document.querySelector('.z2-hero-media');
-  if (hero && media && finePointer) {
+  /* 7. Hero cards drift toward the pointer, each at its own depth (Fenriz img-auto mouse move), desktop only. */
+  var hero = document.querySelector('.z2-hero'), cards = document.querySelectorAll('.z3-hc');
+  if (hero && cards.length && finePointer) {
+    var depth = [10, 18, 26];
     hero.addEventListener('pointermove', function (e) {
       var r = hero.getBoundingClientRect();
       var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
-      media.style.transform = 'perspective(1400px) rotateY(' + (x * 8).toFixed(2) + 'deg) rotateX(' + (-y * 8).toFixed(2) + 'deg) translate(' + (x * 14).toFixed(1) + 'px,' + (y * 14).toFixed(1) + 'px)';
+      cards.forEach(function (c, i) {
+        var d = depth[i % 3];
+        c.style.transform = 'perspective(1200px) translate(' + (x * d).toFixed(1) + 'px,' + (y * d).toFixed(1) + 'px) rotateY(' + (x * 6).toFixed(2) + 'deg) rotateX(' + (-y * 6).toFixed(2) + 'deg)';
+      });
     });
-    hero.addEventListener('pointerleave', function () { media.style.transform = ''; });
+    hero.addEventListener('pointerleave', function () { cards.forEach(function (c) { c.style.transform = ''; }); });
   }
 
   /* 8. Menu links rise in one after another when the menu opens. */

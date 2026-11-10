@@ -818,3 +818,44 @@ html.motion .trail-fig .t3{transition-delay:.1s}
   .btn::before,.btn::after,.nav,.nav-col a,.tile img,.coach>.photo img,.tile-c,.tile-go,.coach-more,.coach-facts,.logo .g{transition:none!important}
   .z2-hero-media::before{animation:none}
 }
+
+/* ===== Zen 3.0 hero: three separate photo cards (Greg, 2026-11-09: "not a collage") =====
+   Headline across the top, then three framed photos with clear gaps, staggered in height.
+   The middle card carries the flickering green block; on desktop each card drifts toward the pointer at its own depth. */
+.z3-hero{padding:48px 0 96px}
+.z3-hero-in{max-width:1320px}
+.z3-hero-top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px 48px;flex-wrap:wrap}
+.z3-hero h1{flex:1 1 0;min-width:0;max-width:21ch;font-size:clamp(46px,5.6vw,86px);line-height:.94}
+.z3-hero .z3-hero-top .btn{margin:0 0 10px;flex:none}
+.z3-hero-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2.6vw,36px);margin-top:clamp(36px,4.5vw,64px);align-items:start}
+.z3-hc{position:relative;transition:transform .6s var(--out-quart)}
+.z3-hc .photo{aspect-ratio:4/3.5;box-shadow:0 18px 40px rgba(0,0,0,.14)}
+.z3-hc:nth-child(1){margin-top:clamp(18px,2.2vw,32px)}
+.z3-hc:nth-child(3){margin-top:clamp(36px,4.4vw,64px)}
+.z3-hc-main{--off:clamp(12px,1.6vw,22px)}
+.z3-hc-main::before{content:"";position:absolute;inset:var(--off) calc(var(--off) * -1) calc(var(--off) * -1) var(--off);background:var(--green);pointer-events:none}
+.z3-hc-main .photo{position:relative}
+html.motion .z3-hc-main::before{animation:z3-flicker 3.8s steps(1,end) 1.4s infinite}
+html.motion .z3-hc{animation:z3-rise .9s var(--out-quart) both}
+html.motion .z3-hc:nth-child(1){animation-delay:.45s}
+html.motion .z3-hc:nth-child(2){animation-delay:.6s}
+html.motion .z3-hc:nth-child(3){animation-delay:.75s}
+html.motion .z3-hero .z3-hero-top .btn{animation:z3-fade .9s var(--out-quart) .55s both}
+@keyframes z3-rise{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
+@media (max-width:900px){
+  .z3-hero{padding:32px 0 64px}
+  .z3-hero-top{display:block}
+  .z3-hero h1{max-width:none}
+  .z3-hero .z3-hero-top .btn{margin:28px 0 0}
+}
+@media (max-width:600px){
+  .z3-hero .z3-hero-top .btn{width:100%}
+  .z3-hero-cards{gap:10px;margin-top:32px}
+  .z3-hc .photo{aspect-ratio:3/4.4;box-shadow:0 10px 24px rgba(0,0,0,.14)}
+  .z3-hc:nth-child(1){margin-top:14px}
+  .z3-hc:nth-child(3){margin-top:28px}
+}
+@media (prefers-reduced-motion:reduce){.z3-hc-main::before{animation:none}.z3-hc{transition:none}}
+
+/* Real map (replaced the drawn stand-in on 2026-11-09) */
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.35)}

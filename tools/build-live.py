@@ -16,7 +16,7 @@ SRC = Path(__file__).resolve().parent.parent / (sys.argv[2] if len(sys.argv) > 2
 OUT = Path(sys.argv[1]).resolve()
 EMAIL = 'gforcemmafitness@gmail.com'
 TILE = {'Adult kickboxing class': 'Kickboxing', 'Adult Brazilian jiu-jitsu class': 'Brazilian Jiu-Jitsu',
-        'G-Fit 360 class': 'G-Fit 360', 'Dawn Rizzi': 'Dawn Rizzi'}
+        'G-Fit 360 class': 'G-Fit 360', 'Dawn Rizzi': 'DR'}
 
 def sub(s, pat, rep, flags=re.S, need=False):
     s2, n = re.subn(pat, rep, s, flags=flags)
@@ -57,6 +57,24 @@ def page(s, name):
     s = s.replace('\n      <div><h4>Follow Us</h4><p><span class="todo">Instagram · Facebook links</span></p></div>', '')
     s = s.replace(' <a href="#">Privacy</a> · <a href="#">Terms</a>', '')
     s = s.replace('<p class="slot-note" id="slot-note" hidden>Sample times until G-Force sends the real schedule.</p>', '<p class="slot-note" id="slot-note" hidden></p>')
+    # --- 2026-11-09 (Greg): live site shows only what we have info for. Each item is listed in TODO.md
+    # under "Hidden on the live site until we have the info"; the source folder keeps it for the preview.
+    # No class schedule yet: drop the schedule links, buttons, sections and hours-table row.
+    s = cut_section(s, 'id="times"')
+    s = s.replace('<a class="btn btn-secondary" href="#times">Class Times</a>', '')
+    s = s.replace('<a class="btn btn-ghost-light" href="schedule.html">See the Schedule</a>', '')
+    s = sub(s, r'\s*<tr><th scope="row">Class schedule</th><td><a href="schedule.html">See this week\'s classes</a></td></tr>', '')
+    s = sub(s, r'<a href="schedule.html"( aria-current="page")?>Schedule</a>', '')
+    s = s.replace('Pick a program and a class time that fits your week. It takes about a minute.', 'Pick a program and leave your details. It takes about a minute.')
+    # No texting set up yet: no text-message promises or SMS consent box.
+    s = s.replace('<h3>We text you to confirm</h3>', '<h3>We confirm your class</h3>')
+    s = s.replace("Pick a program and a class time. We'll text you to confirm and answer any questions.", "Pick a program and we'll get back to you to confirm and answer any questions.")
+    s = s.replace("No payment, no commitment. We'll text you to confirm your class.", "No payment, no commitment. We'll get back to you to confirm your class.")
+    s = sub(s, r'\s*<label class="consent fld full" for="b-sms">.*?</label>', '')
+    # Which coach teaches which class isn't confirmed: no Instructors section (or its pop-ups) on program pages.
+    if name not in ('index.html', 'about.html'):
+        s = cut_section(s, 'id="who-h"')
+        s = sub(s, r'<dialog class="coach-dlg".*?</dialog>\n?', '')
     # sections that only hold placeholders
     s = cut_section(s, 'class="reviews-wrap')
     s = cut_section(s, 'class="z2-light z2-reviews"')
@@ -87,7 +105,11 @@ t = t.replace("'<p>Class times coming soon.</p>'", f"'<p>We\\'re updating class 
 js.write_text(t)
 css = OUT / 'site.css'; c = css.read_text()
 if '.ph-name{' not in c:
-    c += '\n/* live build: name tile where a photo is still missing */\n.ph-name{font:400 clamp(28px,3vw,40px)/1 var(--f-display);text-transform:uppercase;color:var(--muted);text-align:center;padding:16px}\n.coach>.photo.need{align-items:center;padding-top:0}\n.coach>.photo.need .ph-name{display:none}\n.foot-cols:has(>div:nth-child(2):last-child){grid-template-columns:repeat(2,auto)}\n@media (max-width:900px){.foot-cols:has(>div:nth-child(2):last-child){grid-template-columns:auto}}\n'
+    c += '\n/* live build: monogram tile where a photo is still missing (Dawn) */\n.photo.need{background:linear-gradient(160deg,#2C4410 0%,#4B701B 100%)}\n.ph-name{font:400 clamp(72px,9vw,140px)/1 var(--f-display);letter-spacing:.04em;color:rgba(255,255,255,.88);text-align:center;padding:16px}\n.coach>.photo.need{align-items:start;padding-top:22%}\n.foot-cols:has(>div:nth-child(2):last-child){grid-template-columns:repeat(2,auto)}\n@media (max-width:900px){.foot-cols:has(>div:nth-child(2):last-child){grid-template-columns:auto}}\n'
     css.write_text(c)
+(OUT / 'schedule.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="0; url=contact.html#visit"><link rel="canonical" href="https://g-forcemma.com/contact.html"><title>Class schedule | G-Force MMA &amp; Fitness</title></head><body><p>The class schedule is being updated. <a href="contact.html#visit">See our hours and location</a>.</p></body></html>\n')
+bj = OUT / 'booking.js'; t = bj.read_text()
+t = t.replace("      lines.push('OK to text me: ' + (data.sms_consent ? 'Yes' : 'No'));\n", '')
+bj.write_text(t)
 (OUT / 'CNAME').write_text('g-forcemma.com\n')
 print('built', OUT, len(list(OUT.glob('*.html'))), 'pages')

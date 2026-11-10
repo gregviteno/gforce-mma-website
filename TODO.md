@@ -18,6 +18,22 @@ Find any note on the site with: `grep -rn 'class="todo' zen-v2`
   4. Kids' photo releases, so the site can be opened to Google.
 - **Not yet decided:** switching the uppercase buttons, menu and ticker to sentence case (offered, no answer yet).
 
+## Hidden on the live site until we have the info (Greg, 2026-11-09)
+
+g-forcemma.com shows only what we have real info for. These are removed by `tools/build-live.py` at build time; `zen-3.0/` (the preview) still has them, with yellow notes, so they come back as soon as the info is in. When an item arrives: add it to `zen-3.0/`, delete its rule from `build-live.py`, rebuild and push.
+
+- [ ] **Phone number.** Hidden: call buttons, "Call or text" contact card, phone line in the footer and booking section. The phone icon in the mobile bottom bar opens email instead.
+- [ ] **Class schedule** (a photo of the board works). Hidden: Schedule in the menu and footer, the "Class times" section and "Class Times" button on all 7 program pages, "See the Schedule" buttons, the "Class schedule" row in the hours table, and the class-time picker in the booking form. `schedule.html` redirects to the contact page.
+- [ ] **Texting.** Will G-Force text people back, and from which number? Hidden: "We text you to confirm" (now "We confirm your class"), "We'll text you" lines (now "We'll get back to you"), and the text-message consent checkbox. The consent box also needs Privacy and Terms pages before it can return.
+- [ ] **Privacy and Terms pages.** Needed for the text-message consent line.
+- [ ] **Which instructors teach each class.** Hidden: the Instructors section on the 7 program pages. The homepage and About page still show all three coaches.
+- [ ] **Dawn's headshot.** Her card and pop-up show a green "DR" tile instead of a photo.
+- [ ] **Instagram and Facebook links.** Hidden: the "Follow Us" footer column.
+- [ ] **Real Google reviews.** Hidden: the "What families say" section.
+- [ ] **What to wear to the first class, and loaners?** Hidden: that FAQ question and the note on homepage step 3.
+- [ ] **How fast they reply to a booking.** Hidden: the reply-time note on step 2 and the booking section.
+- [ ] **Program FAQs** (how often to come, belts/levels, gear). Hidden: the empty FAQ section on each program page.
+
 ## Needed from Neil / G-Force
 
 - [x] **Homepage hero photos.** The Pexels stand-ins were replaced on 2026-11-09 with G-Force's adult kickboxing group and adult BJJ photos. If Neil wants a real photo of him and Dawn doing BJJ there, swap `img/hero-bjj*`.
