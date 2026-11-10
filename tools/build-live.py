@@ -31,6 +31,10 @@ def cut_section(s, marker):
 
 def page(s, name):
     s = sub(s, r'<!-- DRAFT:[^>]*-->', '')
+    # Indexing (Greg, 2026-11-09): pages go into search, images stay out of image search until the kids' photo releases are signed.
+    if name != 'schedule.html':
+        s = s.replace('<meta name="robots" content="noindex,nofollow">', '<meta name="robots" content="index,follow,noimageindex,max-image-preview:none">')
+    s = s.replace('href="index.html"', 'href="./"')
     s = sub(s, r'<div class="draftbar" role="note">.*?</div>\s*</div>\n?', '', need=True)
     s = s.replace('formEndpoint: "",', f'formEndpoint: "", mailto: "{EMAIL}",')
     # captions and inline notes
@@ -111,5 +115,11 @@ if '.ph-name{' not in c:
 bj = OUT / 'booking.js'; t = bj.read_text()
 t = t.replace("      lines.push('OK to text me: ' + (data.sms_consent ? 'Yes' : 'No'));\n", '')
 bj.write_text(t)
+PAGES = ['', 'little-ninjas.html', 'kids-kickboxing.html', 'kids-jiu-jitsu.html', 'girls-wrestling.html', 'kickboxing.html', 'jiu-jitsu.html', 'g-fit-360.html', 'about.html', 'contact.html']
+import datetime
+today = datetime.date.today().isoformat()
+(OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>https://g-forcemma.com/{p}</loc><lastmod>{today}</lastmod></url>\n' for p in PAGES) + '</urlset>\n')
+(OUT / 'robots.txt').write_text('# Pages are open to search engines. Image crawlers are blocked until the kids\' photo releases are signed.\nUser-agent: *\nAllow: /\n\nUser-agent: Googlebot-Image\nDisallow: /\n\nUser-agent: msnbot-media\nDisallow: /\n\nSitemap: https://g-forcemma.com/sitemap.xml\n')
+(OUT / '404.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page not found | G-Force MMA &amp; Fitness</title><link rel="icon" href="/favicon.ico"><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#F4F4F1;color:#2A2A2A;font:400 18px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;text-align:center;padding:24px}h1{font:700 clamp(36px,7vw,64px)/1 Impact,Arial Narrow,sans-serif;text-transform:uppercase;color:#111;margin:0 0 16px}a{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;margin:8px;background:#4B701B;color:#fff;font-weight:700;text-transform:uppercase;letter-spacing:.06em;text-decoration:none}a.alt{background:#111}</style></head><body><main><h1>Page not found</h1><p>This page doesn&#39;t exist. Try the homepage or book a free class.</p><p><a href="/">Homepage</a><a class="alt" href="/contact.html#book">Book a free class</a></p></main></body></html>\n')
 (OUT / 'CNAME').write_text('g-forcemma.com\n')
 print('built', OUT, len(list(OUT.glob('*.html'))), 'pages')

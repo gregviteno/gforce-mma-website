@@ -84,7 +84,7 @@ python3 tools/build-live.py /path/to/gforce-mma-live-checkout   # strips draft b
 cd /path/to/gforce-mma-live-checkout && git add -A && git commit -m "Update from zen-v2" && git push
 ```
 
-The build fails if any `todo` note, "Sample times", draft bar or "Placeholder" text survives. Pages stay `noindex` until Neil confirms the kids' photo releases. The booking form has no webhook yet, so the live build opens the visitor's email app addressed to gforcemmafitness@gmail.com.
+The build fails if any `todo` note, "Sample times", draft bar or "Placeholder" text survives. Since 2026-11-09 live pages are indexed but images are not (`noimageindex`, image crawlers blocked in robots.txt) until Neil confirms the kids' photo releases (Greg chose "index pages, block images"). Preview folders stay `noindex`. The booking form has no webhook yet, so the live build opens the visitor's email app addressed to gforcemmafitness@gmail.com.
 
 ## Source material (local only, not in this public repo)
 

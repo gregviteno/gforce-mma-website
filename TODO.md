@@ -62,7 +62,11 @@ g-forcemma.com shows only what we have real info for. These are removed by `tool
 - [x] **Domain / hosting for g-forcemma.com.** Soft launch live 2026-11-07: GitHub Pages repo `gregviteno/gforce-mma-live`, GoDaddy DNS (4 GitHub A records on `@`, `www` CNAME to `gregviteno.github.io`). See "Publishing the live site" in `CLAUDE.md`.
 - [x] **HTTPS for g-forcemma.com.** Live 2026-11-07 ~11:55am. The certificate covers g-forcemma.com and www, expires 2027-02-05 and GitHub renews it automatically. HTTPS is enforced, and www redirects to https://g-forcemma.com/. GitHub never requested the certificate until the custom domain was removed, left off for about 2.5 minutes, then re-added; an immediate remove and re-add did nothing.
 - [ ] **Map** is a drawn placeholder (`.map` block). "Open in Maps" works. Optional: real embed.
-- [ ] **Open the site to Google** (after the kids' photo releases): remove `<meta name="robots" content="noindex,nofollow">` from every `zen-v2/` page and rebuild the live site. The live build already strips the draft bar and yellow notes and has no `robots.txt`. Then add the site to Google Search Console and link it from the Google Business Profile.
+- [x] **Open the site to Google (pages only), 2026-11-09.** Live pages now carry `index,follow,noimageindex,max-image-preview:none`; `robots.txt` blocks Googlebot-Image and msnbot-media; `sitemap.xml` lists the 10 pages. Share previews and structured data use `img/og-image.jpg` (adult class). Done by `tools/build-live.py`; the preview folders stay `noindex`.
+- [ ] **Allow images in search** once Neil confirms the kids' photo releases: drop `noimageindex,max-image-preview:none` and the two image-crawler blocks in `tools/build-live.py`, rebuild.
+- [ ] **Google Search Console** (needs Greg's or Neil's Google login): add the `g-forcemma.com` domain property (DNS TXT record at GoDaddy), submit `https://g-forcemma.com/sitemap.xml`, request indexing for the homepage.
+- [ ] **Google Business Profile:** set the website to https://g-forcemma.com/ and make sure the name, address and hours match the site exactly (4240 Hicksville Road, Bethpage, NY 11714; Mon–Fri 7–12 & 3:30–9:30, Sat–Sun 7–12).
+- [ ] **Bing Webmaster Tools** (optional): import from Search Console.
 - [ ] **Feedback doc sharing.** The "Leave feedback" button opens Greg's Google Doc (`1uzqWdO9zn-hudRDo35GGOSpZNkl2xAtL5Y0gGxKTcqg`). It must allow comments from anyone with the link. Not verifiable from the repo.
 
 ## Housekeeping
