@@ -22,6 +22,16 @@ Read `README.md` for the layout and `TODO.md` for open work before changing anyt
 
 Greg asked for a version modeled on https://www.fenriz-gym.com/ ("replicate the Fenriz gym website" but with G-Force's own wording, and better). It copies Fenriz's structure and feel only: black and light-grey sections, Anton uppercase headings with a colour bar behind them (G-Force green gradient instead of Fenriz's yellow-red-blue), full-bleed black-and-white photo breaks with grain, image tiles for programs, a full-screen MENU overlay, square buttons, and a centred footer. No Fenriz text, photos, logo or paid font (Kenyan Coffee) are used. Content is the same as `zen-v2/` (copied 2026-11-09), so content edits made in `zen-v2/` do not reach Zen 2.0 automatically. The live site is still built from `zen-v2/`. `site.css` in `zen-2.0/` is a fresh stylesheet, not the layered zen-v2 one. The "no sharp shapes" Zen rule does not apply here; square corners are part of the Fenriz look.
 
+Zen 2.0 program cards (2026-11-09, Greg: "not too cluttered, a clean concept"): photo tile with a small level line and the title on it, one line of description, one "Program Details →" link. No chips or per-card "Try Free" buttons; one "Book a Free Class" button sits under the section.
+
+## Zen 3.0 (`zen-3.0/`), 2026-11-09
+
+Zen 2.0 in light mode, at Greg's request. Same markup as Zen 2.0 (copied after the clean program cards); `zen-3.0/site.css` is Zen 2.0's stylesheet plus a "Zen 3.0 light mode" block at the end that overrides the dark sections. Edits to Zen 2.0 or Zen 3.0 don't reach each other automatically.
+
+## Text checks
+
+`tools/wordcheck.mjs` flags any word the browser splits mid-word (like "gforcemmafitness@gmail.co / m") and clipped text. Run it on every page at 360-1920px before pushing: `node tools/wordcheck.mjs 360,390,430,768,1024,1280,1440,1920 <urls>`. Don't use `overflow-wrap:anywhere`; it lets grid and flex columns shrink below a word's width.
+
 ## Decisions already made (don't undo without asking)
 
 - **Hero photo** in all versions: Neil cageside with Anthony and Chris (`img/hero-neil*.{jpg,webp}`), from `Photos – Events/Neil- Fight Pic 3 3 w Anthony & Chris.png` in the local project folder.

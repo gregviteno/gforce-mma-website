@@ -41,8 +41,8 @@ window.GF_SCHEDULE = [
 /* Program list: names, ages and pages. Edit ages here when G-Force confirms them. */
 window.GF_PROGRAMS = {
   "little-ninjas":   { name: "Little Ninjas",        ages: "Ages 3–5",              group: "kids",   page: "little-ninjas.html" },
-  "kids-kickboxing": { name: "Kids Kickboxing",      ages: "Kids (ages TBD)",       group: "kids",   page: "kids-kickboxing.html" },
-  "kids-jiu-jitsu":  { name: "Kids Jiu-Jitsu",       ages: "Kids (ages TBD)",       group: "kids",   page: "kids-jiu-jitsu.html" },
+  "kids-kickboxing": { name: "Kids Kickboxing",      ages: "Ages 6+",               group: "kids",   page: "kids-kickboxing.html" },
+  "kids-jiu-jitsu":  { name: "Kids Jiu-Jitsu",       ages: "Ages 6+",               group: "kids",   page: "kids-jiu-jitsu.html" },
   "girls-wrestling": { name: "Girls Wrestling",      ages: "Middle & High School",  group: "kids",   page: "girls-wrestling.html" },
   "kickboxing":      { name: "Kickboxing",           ages: "Adults · All Levels",   group: "adults", page: "kickboxing.html" },
   "jiu-jitsu":       { name: "Brazilian Jiu-Jitsu",  ages: "Adults · All Levels",   group: "adults", page: "jiu-jitsu.html" },

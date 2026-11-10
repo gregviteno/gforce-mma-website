@@ -1,8 +1,8 @@
 # G-Force MMA & Fitness: website previews
 
-Draft website for G-Force MMA & Fitness, a family-owned martial arts school at 4240 Hicksville Road, Bethpage, NY 11714 (owner and head instructor: Sensei Neil Gonzales). Four design directions of the same 11-page site, hosted on GitHub Pages for client review.
+Draft website for G-Force MMA & Fitness, a family-owned martial arts school at 4240 Hicksville Road, Bethpage, NY 11714 (owner and head instructor: Sensei Neil Gonzales). Five design directions of the same 11-page site, hosted on GitHub Pages for client review.
 
-**Preview link to share:** https://gregviteno.github.io/gforce-mma-website/
+**Preview link to share:** https://gregviteno.github.io/gforce-mma-website/ (just the Zen versions: https://gregviteno.github.io/gforce-mma-website/compare/)
 
 | Folder | Version | Live preview |
 |---|---|---|
@@ -10,6 +10,7 @@ Draft website for G-Force MMA & Fitness, a family-owned martial arts school at 4
 | `zen-v2/` | Version 2: Zen (tagged "Current") | https://gregviteno.github.io/gforce-mma-website/zen-v2/ |
 | `neo-v3/` | Version 3: Neo | https://gregviteno.github.io/gforce-mma-website/neo-v3/ |
 | `zen-2.0/` | Zen 2.0: layout modeled on fenriz-gym.com (tagged "New") | https://gregviteno.github.io/gforce-mma-website/zen-2.0/ |
+| `zen-3.0/` | Zen 3.0: Zen 2.0 in light mode (tagged "New") | https://gregviteno.github.io/gforce-mma-website/zen-3.0/ |
 | `zen-v4/` | Redirect only (old zen link → `zen-v2/`) | |
 | `index.html` | Landing page linking the three versions (each opens in a new tab) | |
 

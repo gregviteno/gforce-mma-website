@@ -23,7 +23,7 @@ Find any note on the site with: `grep -rn 'class="todo' zen-v2`
 - [x] **Homepage hero photos.** The Pexels stand-ins were replaced on 2026-11-09 with G-Force's adult kickboxing group and adult BJJ photos. If Neil wants a real photo of him and Dawn doing BJJ there, swap `img/hero-bjj*`.
 - [ ] **Phone number.** Header, footer, contact page, booking section and "Call" buttons on 11 pages (notes: `Phone`, `Phone # needed`, `Call: phone # needed`). The mobile bottom-bar phone button currently links to `contact.html`; point it at `tel:` once the number exists.
 - [ ] **Real class schedule** (a photo of the board works). Replace the sample data in each version's `schedule-data.js` (one line per class). The schedule page and the booking form's class times say "Sample times" until then.
-- [ ] **Ages for Kids Jiu-Jitsu and Kids Kickboxing.** `Ages ?` chips on the homepage cards and both program pages, plus `confirm ages` in the homepage FAQ.
+- [x] **Ages for Kids Jiu-Jitsu and Kids Kickboxing:** 6+ for both (Greg, 2026-11-09). Updated on the cards, program pages, FAQ, booking form and schedule in zen-v2, Zen 2.0 and Zen 3.0.
 - [ ] **What to wear to the first class, and loaners?** Homepage step 3 (`What to wear?`) and the FAQ answer (`Need from Neil: gi, rash guard, gloves? Loaners for class one?`).
 - [ ] **How fast they reply to a booking by text.** `Confirm response time` on the homepage step 2 and the booking section (index + contact).
 - [ ] **Which instructors teach each class.** `Confirm which instructors teach this class` on all 7 program pages.
