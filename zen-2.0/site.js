@@ -78,3 +78,24 @@
       (list.length?'<ul class="mini">'+list.map(function(c){var dn=DAYS.filter(function(d){return d[0]===c.day;})[0];return '<li><b>'+(dn?dn[1]:c.day)+'</b><span>'+esc(c.start)+' – '+esc(c.end)+(c.note?' · '+esc(c.note):'')+'</span></li>';}).join('')+'</ul>':'<p>Class times coming soon.</p>');
   });
 })();
+
+/* Coach profile pop-ups */
+(function(){
+  var root=document.documentElement;
+  document.querySelectorAll('.coach-open').forEach(function(b){
+    b.addEventListener('click',function(){
+      var d=document.getElementById('coach-'+b.getAttribute('data-coach'));
+      if(!d||typeof d.showModal!=='function')return;
+      d._opener=b;root.classList.add('dlg-open');d.showModal();
+      var body=d.querySelector('.dlg-body, .dlg-grid');if(body)body.scrollTop=0;
+    });
+  });
+  document.querySelectorAll('.coach-dlg').forEach(function(d){
+    d.addEventListener('close',function(){root.classList.remove('dlg-open');if(d._opener)d._opener.focus({preventScroll:true});});
+    d.addEventListener('click',function(e){
+      if(e.target===d||e.target.closest('.dlg-x')){d.close();return;}
+      var a=e.target.closest('a');
+      if(a&&(a.getAttribute('href')||'').charAt(0)==='#'){root.classList.remove('dlg-open');d._opener=null;d.close();}
+    });
+  });
+})();

@@ -24,6 +24,8 @@ Greg asked for a version modeled on https://www.fenriz-gym.com/ ("replicate the 
 
 Zen 2.0 program cards (2026-11-09, Greg: "not too cluttered, a clean concept"): photo tile with a small level line and the title on it, one line of description, one "Program Details →" link. No chips or per-card "Try Free" buttons; one "Book a Free Class" button sits under the section.
 
+Coach cards (Zen 2.0 and 3.0, 2026-11-09, Greg: "mainly a picture, hoverable or clickable for an expanded pop-up"): photo with role and name on it; on desktop hover the three key credentials slide up; click or tap opens a `<dialog>` (`.coach-dlg`, ids `coach-neil|dawn|haley`) holding the full About-page bio for that coach, copied into each page, plus a Book a Free Class button. When a bio changes on `about.html`, re-copy it into the dialogs on the homepage and the 7 program pages.
+
 ## Zen 3.0 (`zen-3.0/`), 2026-11-09
 
 Zen 2.0 in light mode, at Greg's request. Same markup as Zen 2.0 (copied after the clean program cards); `zen-3.0/site.css` is Zen 2.0's stylesheet plus a "Zen 3.0 light mode" block at the end that overrides the dark sections. Edits to Zen 2.0 or Zen 3.0 don't reach each other automatically.
