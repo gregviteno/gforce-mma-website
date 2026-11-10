@@ -1,22 +1,46 @@
 # G-Force website: open items
 
-Full scan of `todo` notes: 2026-10-21. Updated for Greg's edits on 2026-11-04.
-Zen (`zen-v2/`) is the chosen layout, so fix each item there only.
+## Resume here (updated 2026-11-09)
 
-Find any note on the site with: `grep -rn 'class="todo' zen-v2`
+**Where things stand**
+- **Live:** https://g-forcemma.com is built from `zen-3.0/` (Fenriz-style light layout with micro-animations). Pages are open to Google; images are blocked from image search until the kids' photo releases are signed.
+- **Previews:** https://gregviteno.github.io/gforce-mma-website/compare/ (Zen, Zen 2.0, Zen 3.0). The preview shows yellow notes where info is missing; the live site hides those spots.
+- **To publish:** edit `zen-3.0/`, run the checks (`tools/qa.mjs`, `tools/wordcheck.mjs`), push, then rebuild the live repo with `python3 tools/build-live.py <live-checkout>` and push it. Details in `CLAUDE.md` under "Publishing the live site".
 
-## Where things stand (2026-11-09)
+**1. Waiting on G-Force (Neil / Dawn).** Each item is hidden on the live site until it arrives.
+- [ ] Phone number.
+- [ ] Class schedule (a photo of the board works).
+- [ ] Texting: will they text people back, and from which number?
+- [ ] Which instructors teach each class.
+- [ ] Dawn's headshot (her card shows a "DR" tile).
+- [ ] Instagram and Facebook links.
+- [ ] Real Google reviews (start asking families now).
+- [ ] What to wear to the first class, and are there loaners?
+- [ ] How fast they reply to a booking.
+- [ ] Program FAQs: how often to come, belts/levels, gear.
+- [ ] Signed photo releases for the kids in the photos (unlocks image search).
+- [ ] Logo file (PNG with transparent background, or SVG). The header uses a stand-in "G FORCE" wordmark and the favicon is a plain "G".
+- [ ] The "extra photo" of Neil with the championship belt: where should it go?
+- [ ] Higher-quality originals of the 2026-11-09 photos (they came by text).
+- [ ] Optional: a photo of Neil and Dawn doing BJJ for the hero; membership terms (contract or month-to-month) for the FAQ.
 
-- **2026-11-09 client edits done:** capitals on the highlighted labels, six new program photos (kids kickboxing, kids jiu-jitsu, girls wrestling, adult kickboxing, adult BJJ, G-Fit 360), Haley's accolades cut to her own 8-item list on About.
+**2. Needs Greg (accounts and decisions)**
+- [ ] Google Search Console: add `g-forcemma.com` (DNS TXT record at GoDaddy), submit `https://g-forcemma.com/sitemap.xml`, request indexing for the homepage.
+- [ ] Google Business Profile: website set to https://g-forcemma.com/, name, address and hours matching the site exactly.
+- [ ] Booking form: pick a form service that emails the gym (no GoHighLevel). Right now the form opens the visitor's email app.
+- [ ] Privacy and Terms pages: needed before the text-message consent box can come back.
+- [ ] Tracking: GA4 and Meta Pixel IDs, if wanted (slots exist in `GF_CONFIG`).
+- [ ] Check the "Leave feedback" Google Doc allows comments from anyone with the link.
+- [ ] Optional: Bing Webmaster Tools (import from Search Console).
+- [ ] Housekeeping: delete the stale local folders outside the repo (`gforce-preview*`, `gforce-website-preview-*`).
 
-- **Live soft launch:** https://g-forcemma.com (HTTPS enforced, `noindex`), repo `gregviteno/gforce-mma-live`. To publish changes, edit `zen-v2/`, then follow "Publishing the live site" in `CLAUDE.md`.
-- **Preview with draft notes:** https://gregviteno.github.io/gforce-mma-website/zen-v2/
-- **Most useful next steps:**
-  1. Phone number.
-  2. Class schedule.
-  3. A way for the booking form to reach the gym without GoHighLevel.
-  4. Kids' photo releases, so the site can be opened to Google.
-- **Not yet decided:** switching the uppercase buttons, menu and ticker to sentence case (offered, no answer yet).
+**3. Our follow-ups when info arrives**
+- For any item in section 1: add it to `zen-3.0/`, delete its hiding rule in `tools/build-live.py`, rebuild and push. The full list of hidden spots is in the next section.
+- Photo releases signed: remove `noimageindex,max-image-preview:none` and the two image-crawler blocks in `tools/build-live.py`, rebuild.
+- A coach bio changes: update `about.html` and re-copy it into the coach pop-ups on the homepage and the 7 program pages.
+- Class schedule: replace the sample data in `zen-3.0/schedule-data.js` (one line per class), then remove the schedule rules from `build-live.py`.
+
+Find any yellow note in the preview with: `grep -rn 'class="todo' zen-3.0`
 
 ## Hidden on the live site until we have the info (Greg, 2026-11-09)
 
