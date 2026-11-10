@@ -18,6 +18,10 @@ Read `README.md` for the layout and `TODO.md` for open work before changing anyt
 - **Programs and order** (menu, footer, cards, booking form): Kids & teens: Little Ninjas, Kids Kickboxing, Kids Jiu-Jitsu, Girls Wrestling. Adults: Kickboxing, Brazilian Jiu-Jitsu, G-Fit 360. Pages are `little-ninjas.html` and `g-fit-360.html`. G-Fit 360 keeps the Express HIIT description, because the intake files only ever mention Express HIIT and Greg said to use the G-Fit 360 name.
 - **No sharp shapes** (the "Soft pass" at the end of `zen-v2/site.css`). Pills for buttons and chips, 10px inputs, 16px photos, 20px panels. Tinted panels instead of outlined boxes, spacing instead of rules, no accent bars, stripes or heavy shadows. Program and instructor cards have no box. The hero is one rounded frame set in from the page edge. Build new components to this scale.
 
+## Zen 2.0 (`zen-2.0/`), started 2026-11-09
+
+Greg asked for a version modeled on https://www.fenriz-gym.com/ ("replicate the Fenriz gym website" but with G-Force's own wording, and better). It copies Fenriz's structure and feel only: black and light-grey sections, Anton uppercase headings with a colour bar behind them (G-Force green gradient instead of Fenriz's yellow-red-blue), full-bleed black-and-white photo breaks with grain, image tiles for programs, a full-screen MENU overlay, square buttons, and a centred footer. No Fenriz text, photos, logo or paid font (Kenyan Coffee) are used. Content is the same as `zen-v2/` (copied 2026-11-09), so content edits made in `zen-v2/` do not reach Zen 2.0 automatically. The live site is still built from `zen-v2/`. `site.css` in `zen-2.0/` is a fresh stylesheet, not the layered zen-v2 one. The "no sharp shapes" Zen rule does not apply here; square corners are part of the Fenriz look.
+
 ## Decisions already made (don't undo without asking)
 
 - **Hero photo** in all versions: Neil cageside with Anthony and Chris (`img/hero-neil*.{jpg,webp}`), from `Photos – Events/Neil- Fight Pic 3 3 w Anthony & Chris.png` in the local project folder.
