@@ -7,7 +7,7 @@ const t = await (await fetch('http://127.0.0.1:9333/json/new?about:blank', { met
 const ws = new WebSocket(t.webSocketDebuggerUrl); await new Promise(r => ws.addEventListener('open', r, { once: true }));
 let id = 0; const P = new Map(); ws.addEventListener('message', e => { const m = JSON.parse(e.data); if (m.id && P.has(m.id)) { P.get(m.id)(m); P.delete(m.id); } });
 const send = (method, params = {}) => new Promise(r => { const i = ++id; P.set(i, r); ws.send(JSON.stringify({ id: i, method, params })); });
-await send('Page.enable');
+await send('Page.enable'); await send('Network.enable'); await send('Network.setCacheDisabled', { cacheDisabled: true });
 const probe = `(() => {
   // open every FAQ and the menu-free page state so hidden text is measured too
   document.querySelectorAll('details').forEach(d => d.open = true);
@@ -37,7 +37,7 @@ const probe = `(() => {
     }
   }
   document.querySelectorAll('body *').forEach(el => {
-    if (el.closest('.tick,.nav,[hidden],svg,picture,.map')) return;
+    if (el.closest('.tick,.nav,[hidden],svg,picture,.map,.sr')) return;
     const cs = getComputedStyle(el); if (cs.display === 'none') return;
     if (el.scrollWidth > el.clientWidth + 2 && (cs.overflowX === 'hidden' || cs.overflowX === 'clip') && el.textContent.trim() && !el.querySelector('img') && !el.closest('.tile,.photo'))
       out.push('CLIPPED TEXT in <' + el.tagName.toLowerCase() + '.' + String(el.className).split(' ')[0] + '> "' + el.textContent.trim().slice(0, 40) + '"');
