@@ -37,7 +37,7 @@ const probe = `(() => {
     }
   }
   document.querySelectorAll('body *').forEach(el => {
-    if (el.closest('.tick,.nav,[hidden],svg,picture,.map,.sr')) return;
+    if (el.closest('.tick,.nav,[hidden],svg,picture,.map,.sr,.hm')) return; // .hm = headline animation letter masks
     const cs = getComputedStyle(el); if (cs.display === 'none') return;
     if (el.scrollWidth > el.clientWidth + 2 && (cs.overflowX === 'hidden' || cs.overflowX === 'clip') && el.textContent.trim() && !el.querySelector('img') && !el.closest('.tile,.photo'))
       out.push('CLIPPED TEXT in <' + el.tagName.toLowerCase() + '.' + String(el.className).split(' ')[0] + '> "' + el.textContent.trim().slice(0, 40) + '"');

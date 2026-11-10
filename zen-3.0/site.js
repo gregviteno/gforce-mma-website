@@ -10,6 +10,7 @@
   /* Full-screen menu */
   var mb=document.getElementById('menuBtn'), nv=document.getElementById('mainnav');
   function setMenu(o){
+    if(o){var hb=document.querySelector('.hdr>.wrap').getBoundingClientRect().bottom;nv.style.paddingTop=Math.round(hb+36)+'px';}
     root.classList.toggle('menu-open',o);nv.classList.toggle('open',o);
     mb.setAttribute('aria-expanded',o?'true':'false');
     mb.querySelector('.mb-t').textContent=o?'Close':'Menu';

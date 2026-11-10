@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-"""Build the public g-forcemma.com site from zen-v2/.
+"""Build the public g-forcemma.com site from zen-3.0/ (live since 2026-11-09; zen-v2/ before that).
 
-usage: python3 tools/build-live.py <outdir>
+usage: python3 tools/build-live.py <outdir> [srcdir, default zen-3.0]
 
-Copies zen-v2/ and strips everything that only belongs in the client draft:
+Copies the source folder and strips everything that only belongs in the client draft:
 draft bar, yellow notes, placeholder captions, empty review boxes, phone lines
 with no number, sample class times. "Photo needed" spots become name tiles and
 the booking form falls back to email (GF_CONFIG.mailto) until formEndpoint is set.
-Fails if any draft note survives. Edit zen-v2/, never the output.
+Fails if any draft note survives. Edit the source folder, never the output.
 """
 import re, shutil, sys
 from pathlib import Path
 
-SRC = Path(__file__).resolve().parent.parent / 'zen-v2'
+SRC = Path(__file__).resolve().parent.parent / (sys.argv[2] if len(sys.argv) > 2 else 'zen-3.0')
 OUT = Path(sys.argv[1]).resolve()
 EMAIL = 'gforcemmafitness@gmail.com'
 TILE = {'Adult kickboxing class': 'Kickboxing', 'Adult Brazilian jiu-jitsu class': 'Brazilian Jiu-Jitsu',
@@ -52,10 +52,14 @@ def page(s, name):
     s = s.replace('<a class="call" href="contact.html" aria-label="Call G-Force (number coming)"><svg aria-hidden="true"><use href="#i-phone"/></svg></a>',
                   f'<a class="call" href="mailto:{EMAIL}" aria-label="Email G-Force"><svg aria-hidden="true"><use href="#i-mail"/></svg></a>')
     s = s.replace('<li><span class="todo">Instagram · Facebook links</span></li>', '')
+    # Zen 2.0/3.0 footer: no phone or social links yet
+    s = s.replace('<br><span class="todo">Phone</span></p>', '</p>')
+    s = s.replace('\n      <div><h4>Follow Us</h4><p><span class="todo">Instagram · Facebook links</span></p></div>', '')
     s = s.replace(' <a href="#">Privacy</a> · <a href="#">Terms</a>', '')
     s = s.replace('<p class="slot-note" id="slot-note" hidden>Sample times until G-Force sends the real schedule.</p>', '<p class="slot-note" id="slot-note" hidden></p>')
     # sections that only hold placeholders
     s = cut_section(s, 'class="reviews-wrap')
+    s = cut_section(s, 'class="z2-light z2-reviews"')
     s = cut_section(s, 'class="starter"')
     if name == 'schedule.html':
         s = s.replace('<p class="lede">Find a class that fits your week. Tap any class to try it free.</p>',
@@ -76,10 +80,14 @@ for f in sorted(OUT.glob('*.html')):
     f.write_text(s)
 sd = OUT / 'schedule-data.js'; t = sd.read_text()
 t = t.replace('window.GF_SCHEDULE_IS_SAMPLE = true;', 'window.GF_SCHEDULE_IS_SAMPLE = false;')
-t = re.sub(r'window\.GF_SCHEDULE = \[.*?\];', 'window.GF_SCHEDULE = []; /* real times not in yet; see zen-v2/schedule-data.js */', t, flags=re.S)
+t = re.sub(r'window\.GF_SCHEDULE = \[.*?\];', 'window.GF_SCHEDULE = []; /* real times not in yet; see the source folder\'s schedule-data.js */', t, flags=re.S)
 sd.write_text(t)
 js = OUT / 'site.js'; t = js.read_text()
 t = t.replace("'<p>Class times coming soon.</p>'", f"'<p>We\\'re updating class times. Email <a href=\"mailto:{EMAIL}\">{EMAIL}</a> and we\\'ll find a time that fits.</p>'")
 js.write_text(t)
+css = OUT / 'site.css'; c = css.read_text()
+if '.ph-name{' not in c:
+    c += '\n/* live build: name tile where a photo is still missing */\n.ph-name{font:400 clamp(28px,3vw,40px)/1 var(--f-display);text-transform:uppercase;color:var(--muted);text-align:center;padding:16px}\n.coach>.photo.need{align-items:center;padding-top:0}\n.coach>.photo.need .ph-name{display:none}\n.foot-cols:has(>div:nth-child(2):last-child){grid-template-columns:repeat(2,auto)}\n@media (max-width:900px){.foot-cols:has(>div:nth-child(2):last-child){grid-template-columns:auto}}\n'
+    css.write_text(c)
 (OUT / 'CNAME').write_text('g-forcemma.com\n')
 print('built', OUT, len(list(OUT.glob('*.html'))), 'pages')

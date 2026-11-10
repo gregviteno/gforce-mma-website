@@ -25,6 +25,7 @@ a{color:var(--green)}
 :focus-visible{outline:3px solid var(--lime);outline-offset:2px}
 h1,h2,h3,h4{margin:0;color:var(--ink);text-wrap:balance}
 p{margin:0}
+.nw{white-space:nowrap}
 p,li,dd,figcaption,blockquote,summary,.lede{text-wrap:pretty}
 ul,ol{margin:0;padding:0}
 .wrap{max-width:var(--container);margin:0 auto;padding-inline:24px}
@@ -555,3 +556,13 @@ html.dlg-open{overflow:hidden}
   .dlg-cta .btn{width:100%}
 }
 @media (max-width:600px){.coach-name{font-size:34px}}
+
+/* Program tiles carry only the level line and title; the whole photo links to the program page. */
+.progs{row-gap:24px}
+.tile-go{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font:700 13px var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.tile-go i{font-style:normal;font-size:18px;line-height:1;color:var(--lime)}
+@media (hover:hover){
+  .tile-go{opacity:0;transform:translateY(8px);transition:opacity .35s cubic-bezier(.165,.84,.44,1),transform .35s cubic-bezier(.165,.84,.44,1)}
+  .tile:hover .tile-go,.tile:focus-visible .tile-go{opacity:1;transform:none}
+}
+@media (hover:none){.tile-go{position:absolute;right:0;bottom:2px;margin:0;font-size:0;gap:0}.tile-go i{font-size:26px}.tile-c{padding-right:34px}}

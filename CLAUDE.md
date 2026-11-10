@@ -4,7 +4,8 @@ Read `README.md` for the layout and `TODO.md` for open work before changing anyt
 
 ## Rules from Greg (the user)
 
-- **Zen is the chosen layout (Greg, 2026-11-04). Edit `zen-v2/` only.** `v1/` and `neo-v3/` are frozen at the 2026-10-21 content and no longer kept in sync, so the older decisions below still describe them but not Zen where the Zen section says otherwise.
+- **Zen 3.0 (`zen-3.0/`) is the live site since 2026-11-09 (Greg: "implement the final zen 3.0 as the live website"). Edit `zen-3.0/` for anything that should go live.** `zen-v2/` (the earlier live Zen) and `zen-2.0/` are kept as previews only.
+- (Earlier rule, kept for history) **Zen was the chosen layout (Greg, 2026-11-04). Edit `zen-v2/` only.** `v1/` and `neo-v3/` are frozen at the 2026-10-21 content and no longer kept in sync, so the older decisions below still describe them but not Zen where the Zen section says otherwise.
 - **No hallucinating.** Only report what was verified: a screenshot, a grep, or a live check. If something wasn't checked, say so.
 - **No AI slop in copy:** no eyebrow labels above headings, no punchy two-part headings ("One roof. Every age."), no full stops at the end of headings, no "01/02" numbering on cards, no corny lines ("meet Neil, Dawn and Haley, the family who teaches every class"), no puffery ("Bethpage's best", "world-renowned"). Plain, specific wording. Keep Neil's own facts.
 - **Mobile must be immaculate.** Check 360, 390, 430 and 768px wide with the tools below before pushing. No horizontal overflow, 44px tap targets for controls, nothing covering faces in photos.
@@ -61,9 +62,13 @@ Zen 2.0 in light mode, at Greg's request. Same markup as Zen 2.0 (copied after t
    Plain `chrome --screenshot` can't go below about 500px wide; these scripts use DevTools device emulation (Node 22+, no installs).
 3. Commit and push to `main`; confirm the Pages build and re-check the live URL.
 
+## Zen 3.0 motion (2026-11-09)
+
+`zen-3.0/motion.js` plus the "Zen 3.0 motion" block at the end of `zen-3.0/site.css` copy the micro-animations of fenriz-gym.com (taken from its GSAP code and Webflow interaction data): headline letter swap on every page title, heading bars wiping in, hero accent flicker, content photos rising and untilting on scroll, photo breaks zooming out on scroll, black-and-white program tiles that take a green tint with a Learn More button on hover, black-and-white coach cards that turn to color on hover, button fill wipe with gradient border, link underline wipe, hero photo tilt toward the pointer, menu fade with staggered links, header shadow on scroll, logo tilt on hover. The first-class section is black with Haley's portrait shown three times (faint to solid) as Fenriz's trial-training figure trail; `mix-blend-mode:lighten` hides the photo's black background. Nothing animates when the visitor prefers reduced motion (`html.motion` is only set by the inline head script when it isn't requested). Program tiles carry no description (Greg, 2026-11-09: "less text, let the photo and title emphasize").
+
 ## Publishing the live site (g-forcemma.com)
 
-Soft launch went live 2026-11-07. The public site is a separate repo, `gregviteno/gforce-mma-live` (GitHub Pages, custom domain g-forcemma.com, DNS at GoDaddy under Neil's account via delegate access). Never edit that repo by hand; rebuild it from `zen-v2/`:
+Soft launch went live 2026-11-07 (built from `zen-v2/`); since 2026-11-09 it is built from `zen-3.0/`. The public site is a separate repo, `gregviteno/gforce-mma-live` (GitHub Pages, custom domain g-forcemma.com, DNS at GoDaddy under Neil's account via delegate access). Never edit that repo by hand; rebuild it from `zen-3.0/` (the script's default source; pass a folder name as the second argument to build another):
 
 ```sh
 gh repo clone gregviteno/gforce-mma-live /path/to/gforce-mma-live-checkout   # first time only
